@@ -1,0 +1,11 @@
+$theme-colors: (
+  "custom-color": #e224c9
+);
+
+$meridian-color: theme-color("custom-color");
+
+
+.custom-element {
+    color: gray("100");
+    background-color: $meridian-color;
+}

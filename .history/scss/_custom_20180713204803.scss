@@ -1,0 +1,30 @@
+$meridian-primary: theme-color("meridian-primary");
+$meridian-secondary-light: theme-color("meridian-secondary-light");
+$meridian-secondary-dark: theme-color("meridian-secondary-dark");
+
+$brnadbar-height-large: "88px";
+$brnadbar-height-small: "44px";
+$page-side-offset: "180px";
+$menu-width-small: "200px";
+$menu-width-full: "100%";
+
+#page {
+ padding: 0 $page-side-offset;
+}
+
+section.page-section {
+  background-color: $meridian-secondary-light;
+  figure.bg-image {
+    height: 100vh;
+  }
+}
+
+#brand {
+  background-color: $meridian-secondary-dark;
+  @include media-breakpoint-up(sm) {
+    height: $brnadbar-height-small;
+  }
+  @include media-breakpoint-up(lg) {
+    height: $brnadbar-height-large;
+  }
+}

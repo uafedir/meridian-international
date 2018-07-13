@@ -1,0 +1,7 @@
+$theme-colors: (
+  "custom-color": #900
+);
+
+.container {
+    background-color: theme-color("custom-color");
+}

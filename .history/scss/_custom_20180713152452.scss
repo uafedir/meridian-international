@@ -1,0 +1,13 @@
+section {
+  height: 100vh;
+}
+
+#brand {
+  background-color: $meridian-secondary-dark;
+  @include media-breakpoint-up(sm) {
+    height: 44px;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 88px;
+  }
+}

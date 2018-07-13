@@ -1,0 +1,20 @@
+$meridian-primary: theme-color("meridian-primary");
+$meridian-secondary-light: theme-color("meridian-secondary-light");
+$meridian-secondary-dark: theme-color("meridian-secondary-dark");
+
+section {
+  background-color: $meridian-secondary-light;
+  figure.bg-image {
+    height: 100vh;
+  }
+}
+
+#brand {
+  background-color: $meridian-secondary-dark;
+  @include media-breakpoint-up(sm) {
+    height: 44px;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 88px;
+  }
+}

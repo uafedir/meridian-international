@@ -1,0 +1,23 @@
+$theme-colors: (
+  "custom-color": #e224c9
+);
+
+$meridian-color: theme-color("custom-color");
+
+section {
+  height: 100vh;
+}
+
+#brand {
+  @include media-breakpoint-down(sm) {
+    height: 90px;
+  }
+  @include media-breakpoint-down(lg) {
+    height: 180px;
+  }
+}
+
+.custom-element {
+    color: gray("100");
+    background-color: $meridian-color;
+}

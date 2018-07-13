@@ -1,0 +1,8 @@
+$theme-colors: (
+  "custom-color": #900
+);
+
+.custom-element {
+    color: gray("100");
+    background-color: theme-color("danger");
+}
