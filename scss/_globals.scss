@@ -1,3 +1,26 @@
-$theme-colors: ( "meridian-primary": #EAE3D9);
-$theme-colors: ( "meridian-secondary-light": #6D6E70);
-$theme-colors: ( "meridian-secondary-dark": #404041);
+$theme-colors: (
+    "meridian-primary": #EAE3D9,
+    "meridian-secondary-light": #6D6E70,
+    "meridian-secondary-dark": #404041
+);
+
+$grid-breakpoints: (
+    st: 0,
+    xs: 480px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    hd: 1900px
+);
+
+$container-max-widths: (
+    xs: 460px,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    hd: 1560px
+);
+
+$grid-gutter-width: 10px;
