@@ -1,7 +1,6 @@
 $meridian-primary: theme-color("meridian-primary");
 $meridian-secondary-light: theme-color("meridian-secondary-light");
 $meridian-secondary-dark: theme-color("meridian-secondary-dark");
-
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     @for $i from 0 to 6 {
@@ -20,8 +19,10 @@ $meridian-secondary-dark: theme-color("meridian-secondary-dark");
   }
 }
 
+$transition-default: all ease-in-out .15s;
 $brnadbar-height-st: 66px;
 $brnadbar-height-lg: 88px;
+$toggler-height:32px;
 $page-side-offset-st: 10px;
 $page-side-offset-md: 24px;
 $page-side-offset-xl: 76px;
@@ -39,6 +40,7 @@ $header-width-hd: calc(#{$menu-width-short} + ((100% - (2 * #{$menu-width-short}
 
 body {
   overflow-x: hidden;
+  background-color: $meridian-secondary-light;
 }
 
 #header {
@@ -71,6 +73,7 @@ body {
   width: 100%;
   height: $brnadbar-height-st;
   padding: 6px 12px;
+  @extend .shadow-sm;
   @include media-breakpoint-up(md) {
     height: $brnadbar-height-lg;
   }
@@ -79,21 +82,22 @@ body {
 #menu {
   width: $menu-width-wide;
   background: white;
+  @extend .shadow-sm;
   @include media-breakpoint-up(md) {
     width: $menu-width-short;
   }
 }
+
 #menu-toggler {
   background: $meridian-primary;
   padding: 6px 12px;
 }
 
-#menu-list > li {
+#menu-list>li {
   padding: 6px 12px;
 }
 
 #page {
-  background-color: $meridian-secondary-light;
   padding: 0 $page-side-offset-st;
   @include media-breakpoint-up(md) {
     padding: 0 $page-side-offset-md;
@@ -104,18 +108,22 @@ body {
   @include media-breakpoint-up(hd) {
     padding: 0 $page-side-offset-hd;
   }
+  &.parallax {
+    .section-content {
+      position: relative;
+    }
+  }
 }
-
 
 section.page-section {
   position: relative;
-
   figure.bg-image {
     position: absolute;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
+    z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -130,14 +138,29 @@ section.page-section {
       margin: 0 -#{$page-side-offset-hd};
     }
   }
-
   .section-content {
     @include media-breakpoint-up(md) {
       max-width: calc(100% - 2*#{$menu-width-short});
       margin: 0 0 0 #{$menu-width-short}
     }
   }
-
+  .content-main {
+    position: relative;
+    padding-top: $grid-gutter-width;
+    @include media-breakpoint-up(md) {
+      padding-top: initial;
+      top: $brnadbar-height-lg;
+      height: 100vh;
+    }
+  }
+  &:first-of-type {
+    .content-main {
+      padding-top: $brnadbar-height-st+$toggler-height+$grid-gutter-width;
+      @include media-breakpoint-up(md) {
+        padding-top: initial;
+      }
+    }
+  }
   .panel-row {
     display: flex;
     flex-wrap: wrap;
@@ -147,25 +170,14 @@ section.page-section {
       justify-content: flex-start;
     }
   }
-
   .panel-col {
     max-width: $panel-max-width + $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
   }
-
   .panel {
     padding: 6px 12px;
-    background: $meridian-primary;
+    background: rgba($meridian-primary, .95);
     min-height: 300px;
-  }
-
-  .content-main {
-    padding-top: $brnadbar-height-st;
-    position: relative;
-    @include media-breakpoint-up(md) {
-      padding-top: initial;
-      top: $brnadbar-height-lg;
-      height: 100vh;
-    }
+    margin-bottom: $grid-gutter-width;
+    @extend .shadow-sm;
   }
 }

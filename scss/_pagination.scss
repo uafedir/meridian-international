@@ -1,0 +1,39 @@
+#pagination {
+    flex-direction: column;
+    position: fixed;
+    top: calc(50vh - 72px - 10px);
+    right: 24px;
+    width: 72px;
+    color: $meridian-secondary-light;
+    text-align: center;
+    @extend .shadow-sm;
+    display: none;
+    @include media-breakpoint-up(md) {
+        display: flex;
+    }
+}
+
+#page-up, #page-down {
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: $meridian-primary;
+    cursor: pointer;
+    transition: $transition-default;
+    &:hover {
+        background: darken($meridian-primary, 10%);
+    }
+}
+
+#page-count {
+    position: relative;
+    background: white;
+    padding: 10px 0;
+}
+
+#current-page,
+#total-pages {
+    font-size: 1.2rem
+}
