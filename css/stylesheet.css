@@ -11976,7 +11976,7 @@ section.page-section figure.bg-image {
 @media (min-width: 768px) {
   section.page-section .section-content {
     max-width: calc(100% - 2*200px);
-    margin: 0 0 0 200px;
+    margin: 0 0 33vh 200px;
   }
 }
 

@@ -141,7 +141,7 @@ section.page-section {
   .section-content {
     @include media-breakpoint-up(md) {
       max-width: calc(100% - 2*#{$menu-width-short});
-      margin: 0 0 0 #{$menu-width-short}
+      margin: 0 0 33vh #{$menu-width-short}
     }
   }
   .content-main {
