@@ -11940,6 +11940,8 @@ body {
 
 section.page-section {
   position: relative;
+  min-height: 100vh;
+  margin-bottom: 33vh;
 }
 
 section.page-section figure.bg-image {
@@ -11976,20 +11978,20 @@ section.page-section figure.bg-image {
 @media (min-width: 768px) {
   section.page-section .section-content {
     max-width: calc(100% - 2*200px);
-    margin: 0 0 33vh 200px;
+    margin: 0 0 0 200px;
   }
 }
 
 section.page-section .content-main {
   position: relative;
   padding-top: 10px;
+  min-height: 100vh;
 }
 
 @media (min-width: 768px) {
   section.page-section .content-main {
     padding-top: initial;
     top: 88px;
-    height: 100vh;
   }
 }
 
@@ -12001,6 +12003,10 @@ section.page-section:first-of-type .content-main {
   section.page-section:first-of-type .content-main {
     padding-top: initial;
   }
+}
+
+section.page-section:last-child {
+  margin-bottom: 0;
 }
 
 section.page-section .panel-row {

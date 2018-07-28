@@ -117,6 +117,8 @@ body {
 
 section.page-section {
   position: relative;
+  min-height: 100vh;
+  margin-bottom: 33vh;
   figure.bg-image {
     position: absolute;
     width: 100vw;
@@ -141,16 +143,16 @@ section.page-section {
   .section-content {
     @include media-breakpoint-up(md) {
       max-width: calc(100% - 2*#{$menu-width-short});
-      margin: 0 0 33vh #{$menu-width-short}
+      margin: 0 0 0 #{$menu-width-short}
     }
   }
   .content-main {
     position: relative;
     padding-top: $grid-gutter-width;
+    min-height: 100vh;
     @include media-breakpoint-up(md) {
       padding-top: initial;
       top: $brnadbar-height-lg;
-      height: 100vh;
     }
   }
   &:first-of-type {
@@ -161,6 +163,12 @@ section.page-section {
       }
     }
   }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  // .content-secondary {
+  //   min-height: 50vh;
+  // }
   .panel-row {
     display: flex;
     flex-wrap: wrap;

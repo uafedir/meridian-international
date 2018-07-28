@@ -15,7 +15,7 @@ $(window).on('load scroll', sidePagination)
 
 function anchorsCalculation() {
 	for (let i = 0; i < total_anchors; i++) {
-		anchors_top[i] = $(anchors[i]).offset().top
+		anchors_top[i] = Math.ceil($(anchors[i]).offset().top)
 	}
 }
 
@@ -33,6 +33,10 @@ page_up.on('click', function () {
 		$('html').animate({
 			scrollTop: anchors_top[current_anchor - 2] - top_offset
 		}, "slow")
+	} else {
+		$('html').animate({
+			scrollTop: 0
+		}, "slow")
 	}
 })
 
@@ -40,6 +44,10 @@ page_down.on('click', function () {
 	if (current_anchor !== total_anchors) {
 		$('html').animate({
 			scrollTop: anchors_top[current_anchor] - top_offset
+		}, "slow")
+	} else {
+		$('html').animate({
+			scrollTop: document_height - scr_h
 		}, "slow")
 	}
 })
