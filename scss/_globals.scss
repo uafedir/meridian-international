@@ -24,3 +24,9 @@ $container-max-widths: (
 );
 
 $grid-gutter-width: 10px;
+
+$font-size-base: 0.9rem;
+$line-height-base: 1.25;
+
+$link-color:                #994c00;
+$link-hover-color:          darken($link-color, 10%);

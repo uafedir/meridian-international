@@ -30,6 +30,7 @@ $page-side-offset-hd: 180px;
 $menu-width-wide: 100%;
 $menu-width-short: 200px;
 $panel-max-width: 400px;
+$panel-min-height: 300px;
 $header-max-width-st: calc(100% - #{2*$grid-gutter-width});
 $header-max-width-md: $panel-max-width+$menu-width-short;
 $header-width-st: $panel-max-width;
@@ -37,13 +38,12 @@ $header-width-md: calc(100% - #{$menu-width-short} - (2 * #{$page-side-offset-md
 $header-width-lg: calc(#{$menu-width-short} + ((100% - (2 * #{$menu-width-short}) - 1 * #{$grid-gutter-width} - 2 * #{$page-side-offset-md}) / 2));
 $header-width-xl: calc(#{$menu-width-short} + ((100% - (2 * #{$menu-width-short}) - 2 * #{$grid-gutter-width} - 2 * #{$page-side-offset-xl}) / 3));
 $header-width-hd: calc(#{$menu-width-short} + ((100% - (2 * #{$menu-width-short}) - 2 * #{$grid-gutter-width} - 2 * #{$page-side-offset-hd}) / 3));
-
 body {
   overflow-x: hidden;
   background-color: $meridian-secondary-light;
 }
 
-#header {
+#header, footer {
   width: $header-width-st;
   max-width: $header-max-width-st;
   margin: auto;
@@ -77,6 +77,10 @@ body {
   @include media-breakpoint-up(md) {
     height: $brnadbar-height-lg;
   }
+  img#logo {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 #menu {
@@ -91,10 +95,26 @@ body {
 #menu-toggler {
   background: $meridian-primary;
   padding: 6px 12px;
+  cursor: pointer;
+  &:hover {
+    background: darken($meridian-primary, 10%);
+  }
 }
 
-#menu-list>li {
-  padding: 6px 12px;
+#menu-list {
+  padding: 9px 0;
+  >li.menu-item {
+    list-style: none;
+    &:hover {
+      background-color: $meridian-primary;
+    }
+    >a {
+      padding: 3px 12px;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 }
 
 #page {
@@ -118,7 +138,10 @@ body {
 section.page-section {
   position: relative;
   min-height: 100vh;
-  margin-bottom: 33vh;
+  @include media-breakpoint-up(md) {
+    min-height: initial;
+    margin-bottom: 33vh;
+  }
   figure.bg-image {
     position: absolute;
     width: 100vw;
@@ -150,6 +173,7 @@ section.page-section {
     position: relative;
     padding-top: $grid-gutter-width;
     min-height: 100vh;
+    margin-bottom: 200px;
     @include media-breakpoint-up(md) {
       padding-top: initial;
       top: $brnadbar-height-lg;
@@ -165,8 +189,7 @@ section.page-section {
   }
   &:last-child {
     margin-bottom: 0;
-  }
-  // .content-secondary {
+  } // .content-secondary {
   //   min-height: 50vh;
   // }
   .panel-row {
@@ -184,8 +207,43 @@ section.page-section {
   .panel {
     padding: 6px 12px;
     background: rgba($meridian-primary, .95);
-    min-height: 300px;
+    min-height: $panel-min-height;
     margin-bottom: $grid-gutter-width;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
     @extend .shadow-sm;
+    &.image-panel {
+      padding:0;
+      >img {
+        max-width: 100%;
+        height: $panel-min-height;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.to-project-link {
+  margin-bottom: $grid-gutter-width;
+  display: block;
+  &:before {
+    content: ">";
+    margin-right: $grid-gutter-width;
+  }
+}
+
+footer {
+  background-color: $meridian-secondary-dark;
+  bottom: 0;
+  >a {
+    display: inline-block;
+    padding: 6px 12px;
+    color: $meridian-primary;
+    &:hover {
+      background-color: lighten($meridian-secondary-dark, 10%);
+      color: $meridian-primary;
+      text-decoration: none;
+    }
   }
 }
