@@ -9170,7 +9170,7 @@ button.bg-meridian-secondary-dark:focus {
   white-space: normal;
 }
 
-.shadow-sm, #brand, #menu, section.page-section .panel, #pagination {
+.shadow-sm, #brand, #menu-list, section.page-section .panel, #pagination {
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
           box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
@@ -11845,12 +11845,6 @@ body {
   margin: auto;
 }
 
-@media (max-width: 767.98px) {
-  #header, footer {
-    position: absolute;
-  }
-}
-
 @media (min-width: 768px) {
   #header, footer {
     max-width: 600px;
@@ -11879,6 +11873,12 @@ body {
   }
 }
 
+@media (max-width: 767.98px) {
+  #header {
+    position: absolute;
+  }
+}
+
 #brand {
   background-color: #404041;
   width: 100%;
@@ -11898,8 +11898,8 @@ body {
 }
 
 #menu {
+  pointer-events: none;
   width: 100%;
-  background: white;
 }
 
 @media (min-width: 768px) {
@@ -11909,17 +11909,28 @@ body {
 }
 
 #menu-toggler {
+  pointer-events: all;
   background: #EAE3D9;
   padding: 6px 12px;
-  cursor: pointer;
 }
 
-#menu-toggler:hover {
+hrml:not(.parallax) #menu-toggler:hover {
+  cursor: pointer;
   background: #d8cbb8;
 }
 
 #menu-list {
+  pointer-events: all;
+  background: white;
   padding: 9px 0;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  position: relative;
+  z-index: -1;
+  -webkit-transition: -webkit-transform ease-out .15s;
+  transition: -webkit-transform ease-out .15s;
+  transition: transform ease-out .15s;
+  transition: transform ease-out .15s, -webkit-transform ease-out .15s;
 }
 
 #menu-list > li.menu-item {
@@ -11935,6 +11946,13 @@ body {
   display: block;
   color: inherit;
   text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+  #menu-list.menu-hidden {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
 }
 
 #page {
@@ -11957,10 +11975,6 @@ body {
   #page {
     padding: 0 180px;
   }
-}
-
-#page.parallax .section-content {
-  position: relative;
 }
 
 section.page-section {
@@ -12011,6 +12025,10 @@ section.page-section figure.bg-image {
     max-width: calc(100% - 2*200px);
     margin: 0 0 0 200px;
   }
+}
+
+html.parallax section.page-section .section-content {
+  position: relative;
 }
 
 section.page-section .content-main {

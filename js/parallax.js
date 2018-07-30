@@ -29,7 +29,7 @@ function parallax(parallax_enable) {
 }
 
 function runParallax() {
-	page.addClass('parallax')
+	$('html').addClass('parallax')
 	for (let i = 0; i < sections_num; i++) {
 		// $.each(content, function () {
 		// 	$(this).css('top', 0)
