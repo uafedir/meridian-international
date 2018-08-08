@@ -11941,6 +11941,14 @@ hrml:not(.parallax) #menu-toggler:hover {
   background-color: #EAE3D9;
 }
 
+#menu-list > li.menu-item.item-level-2 {
+  padding-left: 20px;
+}
+
+#menu-list > li.menu-item.item-active {
+  font-weight: bold;
+}
+
 #menu-list > li.menu-item > a {
   padding: 3px 12px;
   display: block;
@@ -12108,6 +12116,10 @@ section.page-section .panel.image-panel > img {
      object-fit: cover;
 }
 
+section.page-section .panel .panel-body {
+  width: 100%;
+}
+
 .to-project-link {
   margin-bottom: 10px;
   display: block;
@@ -12118,21 +12130,31 @@ section.page-section .panel.image-panel > img {
   margin-right: 10px;
 }
 
-footer {
+#footer {
   background-color: #404041;
   bottom: 0;
 }
 
-footer > a {
+@media (min-width: 768px) {
+  #footer {
+    position: fixed;
+  }
+}
+
+#footer > a {
   display: inline-block;
   padding: 6px 12px;
   color: #EAE3D9;
 }
 
-footer > a:hover {
+#footer > a:hover {
   background-color: #59595b;
   color: #EAE3D9;
   text-decoration: none;
+}
+
+.subheader-main {
+  text-transform: uppercase;
 }
 
 #pagination {
