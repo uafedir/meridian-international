@@ -1,4 +1,4 @@
-var scrollSpeed = 3;
+var scrollSpeed = 3.5;
 var breakpoint = 768;
 var page = $('#page');
 var section = $('.page-section');

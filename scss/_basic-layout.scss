@@ -119,6 +119,12 @@ body {
     &:hover {
       background-color: $meridian-primary;
     }
+    &.item-level-2 {
+      padding-left: 20px;
+    }
+    &.item-active {
+      font-weight: bold;
+    }
     >a {
       padding: 3px 12px;
       display: block;
@@ -236,6 +242,9 @@ section.page-section {
         object-fit: cover;
       }
     }
+    .panel-body {
+      width:100%
+    }
   }
 }
 
@@ -248,9 +257,12 @@ section.page-section {
   }
 }
 
-footer {
+#footer {
   background-color: $meridian-secondary-dark;
   bottom: 0;
+  @include media-breakpoint-up(md) {
+    position: fixed;
+  }
   >a {
     display: inline-block;
     padding: 6px 12px;
@@ -261,4 +273,8 @@ footer {
       text-decoration: none;
     }
   }
+}
+
+.subheader-main {
+  text-transform: uppercase;
 }
