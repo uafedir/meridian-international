@@ -261,6 +261,7 @@ section.page-section {
   background-color: $meridian-secondary-dark;
   bottom: 0;
   @include media-breakpoint-up(md) {
+    margin: 0;
     position: fixed;
   }
   >a {
