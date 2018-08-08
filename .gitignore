@@ -1,3 +1,4 @@
 .history*
 css/*
 *.css
+*.css.map

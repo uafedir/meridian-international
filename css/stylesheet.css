@@ -11945,7 +11945,7 @@ hrml:not(.parallax) #menu-toggler:hover {
   padding-left: 20px;
 }
 
-#menu-list > li.menu-item.item-active {
+#menu-list > li.menu-item.menu-item-active {
   font-weight: bold;
 }
 
