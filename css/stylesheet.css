@@ -12103,6 +12103,7 @@ section.page-section .panel.image-panel {
 
 section.page-section .panel.image-panel > img {
   max-width: 100%;
+  min-width: 100%;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;

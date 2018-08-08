@@ -231,6 +231,7 @@ section.page-section {
       padding:0;
       >img {
         max-width: 100%;
+        min-width: 100%;
         height: $panel-min-height;
         object-fit: cover;
       }
