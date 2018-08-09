@@ -12152,7 +12152,6 @@ section.page-section .panel .panel-body {
 
 @media (min-width: 768px) {
   #footer {
-    margin: 0;
     position: fixed;
   }
 }
