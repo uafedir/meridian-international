@@ -137,6 +137,18 @@ body {
       transform: translateY(-100%);
     }
   }
+  .menu-back-button {
+    padding: 6px 12px;
+    background: #6d6e6f;
+    margin: 12px 0 0;
+    margin-bottom: -12px;
+    color: white;
+    display: block;
+    &:before {
+      content: "<<";
+      margin-right: $grid-gutter-width;
+    }
+  }
 }
 
 #page {
