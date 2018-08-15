@@ -43,7 +43,8 @@ body {
   background-color: $meridian-secondary-light;
 }
 
-#header, footer {
+#header,
+footer {
   width: $header-width-st;
   max-width: $header-max-width-st;
   margin: auto;
@@ -198,7 +199,7 @@ section.page-section {
       margin: 0 0 0 #{$menu-width-short}
     }
     html.parallax & {
-          position: relative;
+      position: relative;
     }
   }
   .content-main {
@@ -246,7 +247,7 @@ section.page-section {
     flex-wrap: wrap;
     @extend .shadow-sm;
     &.image-panel {
-      padding:0;
+      padding: 0;
       >img {
         max-width: 100%;
         min-width: 100%;
@@ -255,7 +256,13 @@ section.page-section {
       }
     }
     .panel-body {
-      width:100%
+      width: 100%;
+      > img {
+        width: calc(100% + 24px);
+        position: relative;
+        top: -6px;
+        left: -12px;
+      }
     }
   }
 }

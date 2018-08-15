@@ -11839,14 +11839,16 @@ body {
   background-color: #6D6E70;
 }
 
-#header, footer {
+#header,
+footer {
   width: 400px;
   max-width: calc(100% - 20px);
   margin: auto;
 }
 
 @media (min-width: 768px) {
-  #header, footer {
+  #header,
+  footer {
     max-width: 600px;
     width: calc(100% - 200px - (2 * 24px));
     margin: 0 24px;
@@ -11854,20 +11856,23 @@ body {
 }
 
 @media (min-width: 992px) {
-  #header, footer {
+  #header,
+  footer {
     width: calc(200px + ((100% - (2 * 200px) - 1 * 10px - 2 * 24px) / 2));
   }
 }
 
 @media (min-width: 1200px) {
-  #header, footer {
+  #header,
+  footer {
     width: calc(200px + ((100% - (2 * 200px) - 2 * 10px - 2 * 76px) / 3));
     margin: 0 76px;
   }
 }
 
 @media (min-width: 1900px) {
-  #header, footer {
+  #header,
+  footer {
     width: calc(200px + ((100% - (2 * 200px) - 2 * 10px - 2 * 180px) / 3));
     margin: 0 180px;
   }
@@ -12133,6 +12138,13 @@ section.page-section .panel.image-panel > img {
 
 section.page-section .panel .panel-body {
   width: 100%;
+}
+
+section.page-section .panel .panel-body > img {
+  width: calc(100% + 24px);
+  position: relative;
+  top: -6px;
+  left: -12px;
 }
 
 .to-project-link {
