@@ -1,4 +1,4 @@
-#pagination {
+@mixin pagination {
     flex-direction: column;
     position: fixed;
     top: calc(50vh - 72px - 10px);
@@ -13,7 +13,7 @@
     }
 }
 
-#page-up, #page-down {
+@mixin control {
     display: flex;
     height: 32px;
     justify-content: center;
@@ -25,6 +25,14 @@
     &:hover {
         background: darken($meridian-primary, 10%);
     }
+}
+#pagination {
+    @include pagination
+}
+
+
+#page-up, #page-down {
+    @include control
 }
 
 #page-count {
