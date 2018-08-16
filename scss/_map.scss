@@ -1,0 +1,103 @@
+#map-container{
+   background: $meridian-primary; 
+}
+#mapid{
+    height: 100vh;
+}
+
+.map-content{
+    padding: 6px 12px;
+    background: $meridian-primary;
+    margin-top: $brnadbar-height-st;
+    width: $header-width-st;
+    max-width: $header-max-width-st;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    @include media-breakpoint-down(sm) {
+        margin:$brnadbar-height-st auto;
+        position: absolute;
+    }
+    @include media-breakpoint-up(md) {
+        max-width: $header-max-width-md;
+        width: $header-width-md;
+        margin: $brnadbar-height-lg $page-side-offset-md;
+    }
+    @include media-breakpoint-up(lg) {
+        width: $header-width-lg;
+    }
+    @include media-breakpoint-up(xl) {
+        width: $header-width-xl;
+        margin: $brnadbar-height-lg $page-side-offset-xl;
+    }
+    @include media-breakpoint-up(hd) {
+    width: $header-width-hd;
+    margin: $brnadbar-height-lg $page-side-offset-hd;
+  }
+    position: fixed;
+    z-index: 1000;
+    display: none;
+
+    .hidden{
+        display: none;
+    }
+}
+.custom-marker-left-up,.custom-marker-right-up,.custom-marker-left-down,.custom-marker-right-down{
+    background: transparent url('/media/bwc-sprite-marker-2.png') no-repeat 0 0;
+    width: 160px !important;
+    height: 100px !important;
+    &:focus {
+        outline:none;
+    }
+    &:hover{
+        color:white;
+    }
+}  
+
+.custom-marker-left-up{
+    background-position: 0px -540px;
+    padding: 14px 28px 28px 28px;
+    margin: -86px 0 0 -141px !important;
+    &:hover{
+        background-position: -222px -540px; 
+    }
+}
+
+.custom-marker-right-up{
+    background-position: 0 -658px;
+    padding: 27px 28px 26px 30px;
+    margin: -100px 0 0 -18px !important;
+    &:hover{
+        background-position: -222px -658px;
+    }
+}
+
+.custom-marker-left-down{
+    background-position: 0 -934px;
+    padding: 36px 28px 18px 28px;
+    margin: 2px 0 0 -141px !important;
+    &:hover{
+        background-position: -222px -935px;
+    } 
+}
+
+.custom-marker-right-down{   
+    background-position: 0 -791px;
+    padding: 35px 28px 17px 28px;
+    margin: 2px 0 0 -18px !important;
+    &:hover{
+        background-position: -222px -792px;
+    } 
+}
+
+#mapid .leaflet-control-zoom{
+    @include pagination;
+}
+
+#mapid .leaflet-control-zoom-in, #mapid .leaflet-control-zoom-out{
+    @include control;
+    width: 72px;
+}
+
+.leaflet-container {
+    background-color:rgba(255,0,0,0.0);
+    cursor: default;
+}
