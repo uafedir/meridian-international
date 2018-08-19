@@ -100,13 +100,17 @@ const flagMapping = {
    'customRightUp':2,
    'customLeftDown':3,
    'customRightDown':4,
-}
+};
 
 function onCustomMarkerClick(e) {
     const number = e.target.options.title;
     console.log(e.target.options.title);
     console.log(flagMapping[number]);
-    $('#menu').hide();
+    $('#menu-list').hide();
+    $('#menu').css('width', '100%');
+    if ($('#menu-toggler .close-button').length === 0){
+      $('#menu-toggler').append('<i class="oi oi-x close-button"></i>');
+    }
     $('.map-content').show();
     $('.map-content [data-number=1]').hide();
     $('.map-content [data-number=2]').hide();

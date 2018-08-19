@@ -8,29 +8,29 @@
 .map-content{
     padding: 6px 12px;
     background: $meridian-primary;
-    margin-top: $brnadbar-height-st;
+    margin-top: $brnadbar-height-st+$toggler-height*0.9;
     width: $header-width-st;
     max-width: $header-max-width-st;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
     @include media-breakpoint-down(sm) {
-        margin:$brnadbar-height-st auto;
+        margin:$brnadbar-height-st+$toggler-height*0.9 auto;
         position: absolute;
     }
     @include media-breakpoint-up(md) {
         max-width: $header-max-width-md;
         width: $header-width-md;
-        margin: $brnadbar-height-lg $page-side-offset-md;
+        margin: $brnadbar-height-lg+$toggler-height*0.9 $page-side-offset-md;
     }
     @include media-breakpoint-up(lg) {
         width: $header-width-lg;
     }
     @include media-breakpoint-up(xl) {
         width: $header-width-xl;
-        margin: $brnadbar-height-lg $page-side-offset-xl;
+        margin: $brnadbar-height-lg+$toggler-height*0.9 $page-side-offset-xl;
     }
     @include media-breakpoint-up(hd) {
     width: $header-width-hd;
-    margin: $brnadbar-height-lg $page-side-offset-hd;
+    margin: $brnadbar-height-lg+$toggler-height*0.9 $page-side-offset-hd;
   }
     position: fixed;
     z-index: 1000;
@@ -39,6 +39,9 @@
     .hidden{
         display: none;
     }
+}
+.close-button{
+    float: right;
 }
 .custom-marker-left-up,.custom-marker-right-up,.custom-marker-left-down,.custom-marker-right-down{
     background: transparent url('/media/bwc-sprite-marker-2.png') no-repeat 0 0;
