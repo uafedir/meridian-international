@@ -15,6 +15,8 @@
     @include media-breakpoint-down(sm) {
         margin:$brnadbar-height-st+$toggler-height*0.9 auto;
         position: absolute;
+        right: 0;
+        left: 0;
     }
     @include media-breakpoint-up(md) {
         max-width: $header-max-width-md;
@@ -42,6 +44,7 @@
 }
 .close-button{
     float: right;
+    cursor: pointer;
 }
 .custom-marker-left-up,.custom-marker-right-up,.custom-marker-left-down,.custom-marker-right-down{
     background: transparent url('/media/bwc-sprite-marker-2.png') no-repeat 0 0;
@@ -50,7 +53,7 @@
     &:focus {
         outline:none;
     }
-    &:hover{
+    &:hover, &.active{
         color:white;
     }
 }  
@@ -59,7 +62,7 @@
     background-position: 0px -540px;
     padding: 14px 28px 28px 28px;
     margin: -86px 0 0 -141px !important;
-    &:hover{
+    &:hover, &.active{
         background-position: -222px -540px; 
     }
 }
@@ -68,7 +71,7 @@
     background-position: 0 -658px;
     padding: 27px 28px 26px 30px;
     margin: -100px 0 0 -18px !important;
-    &:hover{
+    &:hover, &.active{
         background-position: -222px -658px;
     }
 }
@@ -77,7 +80,7 @@
     background-position: 0 -934px;
     padding: 36px 28px 18px 28px;
     margin: 2px 0 0 -141px !important;
-    &:hover{
+    &:hover, &.active{
         background-position: -222px -935px;
     } 
 }
@@ -86,7 +89,7 @@
     background-position: 0 -791px;
     padding: 35px 28px 17px 28px;
     margin: 2px 0 0 -18px !important;
-    &:hover{
+    &:hover, &.active{
         background-position: -222px -792px;
     } 
 }

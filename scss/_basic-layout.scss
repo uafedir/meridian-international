@@ -94,6 +94,9 @@ footer {
   @include media-breakpoint-up(md) {
     width: $menu-width-short;
   }
+  &.showed-map-content{
+      width: 100%;
+  }
 }
 
 #menu-toggler {

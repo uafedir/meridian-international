@@ -21,7 +21,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoicG9wY29ybnVhIiwiYSI6ImNqa3V3anhnMTA5c2Izc3EyaDNkeXpndm0ifQ.M-7kYgptBYJGRxKo1tA22w',
     maxBoundsViscosity: 0.9,
     bounceAtZoomLimits: false,
-    zoomControl:true,
+    zoomControl: true,
     tms: false,
     noWrap: true,
     opacity: 1.0,
@@ -50,9 +50,8 @@ var myIconLeftUp = L.divIcon({
 
 var customMarkerLeftUp = L.marker([51.48, -0.095], {
     icon: myIconLeftUp,
-    title: "customLeftUp"
+    title: "custom-marker-left-up"
 }).addTo(mymap);
-
 
 
 //RightUp
@@ -64,9 +63,8 @@ var myIconRightUp = L.divIcon({
 
 var customMarkerRightUp = L.marker([51.48, -0.095], {
     icon: myIconRightUp,
-    title: "customRightUp"
+    title: "custom-marker-right-up"
 }).addTo(mymap);
-
 
 
 //LeftDown
@@ -78,9 +76,8 @@ var myIconLeftDown = L.divIcon({
 
 var customMarkerLeftDown = L.marker([51.48, -0.095], {
     icon: myIconLeftDown,
-    title: "customLeftDown"
+    title: "custom-marker-left-down"
 }).addTo(mymap);
-
 
 
 //RightDown
@@ -92,32 +89,43 @@ var myIconRightDown = L.divIcon({
 
 var customMarkerRightDown = L.marker([51.48, -0.095], {
     icon: myIconRightDown,
-    title: "customRightDown"
+    title: "custom-marker-right-down"
 }).addTo(mymap);
 
 const flagMapping = {
-   'customLeftUp':1,
-   'customRightUp':2,
-   'customLeftDown':3,
-   'customRightDown':4,
+    'custom-marker-left-up': 1,
+    'custom-marker-right-up': 2,
+    'custom-marker-left-down': 3,
+    'custom-marker-right-down': 4,
 };
 
 function onCustomMarkerClick(e) {
     const number = e.target.options.title;
-    console.log(e.target.options.title);
-    console.log(flagMapping[number]);
+    const className = e.target.options.icon.options.className;
+    console.log(e);
     $('#menu-list').hide();
-    $('#menu').css('width', '100%');
-    if ($('#menu-toggler .close-button').length === 0){
-      $('#menu-toggler').append('<i class="oi oi-x close-button"></i>');
+    $('#menu').addClass('showed-map-content');
+    if ($('#menu-toggler .close-button').length === 0) {
+        $('#menu-toggler').append('<i class="oi oi-x close-button"></i>');
+        $('.close-button').click(function () {
+                $('#menu-list').show();
+                $('#menu').removeClass('showed-map-content');
+                $('.map-content').hide();
+                for (var key in flagMapping) {
+                    $(`.map-content [data-number=${flagMapping[key]}]`).hide();
+                    $(`.${key}`).removeClass('active');
+                }
+                $('.close-button').remove();
+            }
+        );
     }
     $('.map-content').show();
-    $('.map-content [data-number=1]').hide();
-    $('.map-content [data-number=2]').hide();
-    $('.map-content [data-number=3]').hide();
-    $('.map-content [data-number=4]').hide();
+    for (var key in flagMapping) {
+        $(`.map-content [data-number=${flagMapping[key]}]`).hide();
+        $(`.${key}`).removeClass('active');
+    }
     $(`.map-content [data-number=${flagMapping[number]}]`).show();
-
+    $(`.${className}`).addClass('active');
 }
 
 customMarkerLeftUp.on('click', onCustomMarkerClick);
