@@ -6,7 +6,8 @@ const imprintModal = new Custombox.modal({
     },
     loader: {
         active: false,
-    }
+    },
+    onClose: closeModal
 });
 const privacyModal = new Custombox.modal({
     content: {
@@ -31,8 +32,9 @@ const contactModal = new Custombox.modal({
 
 
 $('#footer [data-title=imprint]').click(function () {
-    imprintModal.open();
     $('body').addClass('no-scroll');
+    imprintModal.open();
+
 });
 
 $('#footer [data-title=privacy]').click(function () {
@@ -45,10 +47,11 @@ $('#footer [data-title=contact]').click(function () {
     $('body').addClass('no-scroll');
 });
 
-function closeModal(){
+function closeModal() {
     Custombox.modal.close();
     $('body').removeClass('no-scroll');
 }
+
 $('#imprint').click(closeModal);
 
 $('#privacy').click(closeModal);
@@ -59,4 +62,8 @@ $('.close-button').click(closeModal);
 
 $('.p-0.panel').click(function () {
     return false;
+});
+
+document.addEventListener('custombox:overlay:close', function() {
+    $('body').removeClass('no-scroll');
 });
