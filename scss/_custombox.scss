@@ -1,0 +1,160 @@
+// Constans
+$cb: custombox;
+$overlay: #{$cb}-overlay;
+$content: #{$cb}-content;
+$container: #{$cb}-container;
+$perspective: #{$cb}-perspective;
+$lock: #{$cb}-lock;
+$reference: #{$cb}-reference;
+$index: 9997;
+
+// Actions
+$open: #{$cb}-open;
+$close: #{$cb}-close;
+$t: #{$cb}-top;
+$b: #{$cb}-bottom;
+$l: #{$cb}-left;
+$r: #{$cb}-right;
+
+// Cartesian
+$x-left: #{$cb}-x-left;
+$x-center: #{$cb}-x-center;
+$x-right: #{$cb}-x-right;
+$y-top: #{$cb}-y-top;
+$y-center: #{$cb}-y-center;
+$y-bottom: #{$cb}-y-bottom;
+
+// Effects
+$effect1: #{$cb}-fadein;
+
+@mixin animation($name, $timing: ease-out, $fill-mode: forwards) {
+  animation-name: $name;
+  animation-timing-function: $timing;
+  animation-fill-mode: $fill-mode;
+  backface-visibility: hidden;
+}
+
+/*
+ ----------------------------
+ Core
+ ----------------------------
+ */
+@mixin fixed() {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.#{$content},
+.#{$overlay} {
+  @include fixed();
+}
+.#{$overlay} {
+  z-index: $index;
+  opacity: 0;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+  transition-property: opacity;
+}
+.#{$content} {
+  z-index: $index + 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: stretch;
+}
+.#{$lock} {
+  overflow: hidden;
+}
+.#{$reference} {
+  display: none;
+}
+.#{$content} {
+  overflow-y: auto;
+  > * {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.#{$cb}-fullscreen.#{$content} {
+  justify-content: flex-start;
+  align-items: stretch;
+  > * {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+.#{$y-top} {
+  align-items: baseline;
+}
+.#{$x-left} {
+  align-items: flex-start;
+}
+.#{$y-center} {
+  align-items: center;
+}
+.#{$y-bottom} {
+  align-items: flex-end;
+}
+.#{$x-center} {
+  justify-content: center;
+}
+.#{$x-right} {
+  justify-content: flex-end;
+}
+.#{$perspective},
+.#{$perspective} body {
+  perspective: 600px;
+  height: 100%;
+  overflow: hidden;
+}
+.#{$perspective} {
+  .#{$container} {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
+/*
+ ----------------------------
+ #{$effect1}
+ ----------------------------
+ */
+@mixin fadeOpen() {
+  transition-property: all;
+}
+@mixin fadeClose() {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    @include fadeOpen();
+  }
+  to {
+    @include fadeClose();
+  }
+}
+@keyframes fadeOut {
+  from {
+    @include fadeClose();
+  }
+  to {
+    @include fadeOpen();
+  }
+}
+.#{$effect1} {
+  &.#{$content} {
+    opacity: 0;
+
+    &.#{$open} {
+      @include animation(fadeIn, ease-in);
+    }
+    &.#{$close} {
+      @include animation(fadeOut, ease-out);
+    }
+  }
+}

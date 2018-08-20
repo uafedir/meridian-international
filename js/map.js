@@ -102,7 +102,6 @@ const flagMapping = {
 function onCustomMarkerClick(e) {
     const number = e.target.options.title;
     const className = e.target.options.icon.options.className;
-    console.log(e);
     $('#menu-list').hide();
     $('#menu').addClass('showed-map-content');
     if ($('#menu-toggler .close-button').length === 0) {
