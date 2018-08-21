@@ -1,0 +1,103 @@
+.rangeslider__handle {
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px 0 #807464;
+    padding: 15px 9px;
+    color: #1c1918;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    -webkit-transition: top 400ms ease-out;
+    -moz-transition: top 400ms ease-out;
+    -o-transition: top 400ms ease-out;
+    transition: top 400ms ease-out;
+    z-index: 10;
+}
+
+
+
+.rangeslider--horizontal {
+    height: 6px;
+    width: 100%;
+}
+
+.rangeslider {
+    background: #ffffff;
+    position: relative;
+    box-shadow: 0 0 4px 0 #807464;
+    display: block;
+}
+
+.rangeslider--horizontal .rangeslider__handle {
+    top: -20px;
+    touch-action: pan-y;    
+}
+
+.rangeslider__handle.is-moving {
+    background-color: transparent;
+    top: -45px;
+    color: #FFF;
+    -webkit-box-shadow: none;
+    text-shadow: 1px 1px 7px #000000;
+}
+
+.slider-pager {
+    position: absolute;
+    bottom: 170px;
+    left: 30vw;
+    width: 40vw;
+    height: 6px;
+    z-index: 1000;
+    input, textarea {
+        font-family: "Conduit ITC W01 Light",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+        color: #262220;
+        width: 1px;
+    }
+}
+
+@media (max-width:914px) {
+    .rangeslider__handle {
+        font-size: 16px;
+        padding: 10px 9px;
+    }
+}
+
+@media (max-width:627px) {
+    .rangeslider__handle {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.rangeslider--horizontal .rangeslider__handle {
+    top: -20px;
+    touch-action: pan-y;
+    -ms-touch-action: pan-y;
+}
+
+@media (max-width:765px) {
+    .rangeslider--horizontal .rangeslider__handle {
+        top: -16px;
+    }
+}
+
+.rangeslider--horizontal .rangeslider__handle.is-moving {
+    top: -45px;
+}
+
+@media (max-width:765px) {
+    .rangeslider--horizontal .rangeslider__handle.is-moving {
+        top: -32px;
+    }
+}
+
+input[type="range"]:focus+.rangeslider .rangeslider__handle {
+    -moz-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+    -webkit-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+}
+
