@@ -45,10 +45,10 @@ mymap.setMaxBounds([
 //LeftUp
 var myIconLeftUp = L.divIcon({
     className: 'custom-marker-left-up',
-    html: '<div>LAGOM</div><div>sdklvsmd</div>',
+    html: '<h5>CASA</h5>',
 });
 
-var customMarkerLeftUp = L.marker([51.48, -0.095], {
+var customMarkerLeftUp = L.marker([51.49, -0.096], {
     icon: myIconLeftUp,
     title: "custom-marker-left-up"
 }).addTo(mymap);
@@ -57,7 +57,7 @@ var customMarkerLeftUp = L.marker([51.48, -0.095], {
 //RightUp
 var myIconRightUp = L.divIcon({
     className: 'custom-marker-right-up',
-    html: '<div>LAGOM</div><div>sdklvsmd</div>',
+    html: '<h5>SKYLAR</h5>',
 
 });
 
@@ -70,33 +70,20 @@ var customMarkerRightUp = L.marker([51.48, -0.095], {
 //LeftDown
 var myIconLeftDown = L.divIcon({
     className: 'custom-marker-left-down',
-    html: '<div>LAGOM</div><div>sdklvsmd</div>',
+    html: '<h5>3RD</h5>',
 
 });
 
-var customMarkerLeftDown = L.marker([51.48, -0.095], {
+var customMarkerLeftDown = L.marker([51.47, -0.094], {
     icon: myIconLeftDown,
     title: "custom-marker-left-down"
 }).addTo(mymap);
 
 
-//RightDown
-var myIconRightDown = L.divIcon({
-    className: 'custom-marker-right-down',
-    html: '<div>LAGOM</div><div>sdklvsmd</div>',
-
-});
-
-var customMarkerRightDown = L.marker([51.48, -0.095], {
-    icon: myIconRightDown,
-    title: "custom-marker-right-down"
-}).addTo(mymap);
-
 const flagMapping = {
     'custom-marker-left-up': 1,
     'custom-marker-right-up': 2,
     'custom-marker-left-down': 3,
-    'custom-marker-right-down': 4,
 };
 
 function onCustomMarkerClick(e) {
@@ -129,5 +116,4 @@ function onCustomMarkerClick(e) {
 
 customMarkerLeftUp.on('click', onCustomMarkerClick);
 customMarkerRightUp.on('click', onCustomMarkerClick);
-customMarkerRightDown.on('click', onCustomMarkerClick);
 customMarkerLeftDown.on('click', onCustomMarkerClick);
