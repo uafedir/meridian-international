@@ -1,8 +1,8 @@
-var mymap = L.map('mapid').setView([51.48, -0.095], 14);
+var mymap = L.map('mapid').setView([11.544239, 104.9262265], 14);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    maxZoom: 18,
-    minZoom: 13,
+    maxZoom: 16,
+    minZoom: 12,
     id: 'mapbox.run-bike-hike',
     //mapbox.streets
     //mapbox.light
@@ -28,66 +28,84 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 mymap.setMaxBounds([
-    [51.394493, -0.262299],
-    [51.583683, 0.040512]
+    [11.475132, 104.8365973],
+    [11.622882, 105.020376]
 ]);
 
-
-//
-//
-// function onMapClick(e) {
-//     alert("You clicked the map at " + e.latlng);
-// }
-//
-// mymap.on('click', onMapClick);
-//
-
-//LeftUp
-var myIconLeftUp = L.divIcon({
-    className: 'custom-marker-left-up',
-    html: '<h5>CASA</h5>',
-});
-
-var customMarkerLeftUp = L.marker([51.49, -0.096], {
-    icon: myIconLeftUp,
-    title: "custom-marker-left-up"
-}).addTo(mymap);
-
-
-//RightUp
-var myIconRightUp = L.divIcon({
-    className: 'custom-marker-right-up',
-    html: '<h5>SKYLAR</h5>',
-
-});
-
-var customMarkerRightUp = L.marker([51.48, -0.095], {
-    icon: myIconRightUp,
-    title: "custom-marker-right-up"
-}).addTo(mymap);
-
-
-//LeftDown
-var myIconLeftDown = L.divIcon({
-    className: 'custom-marker-left-down',
-    html: '<h5>3RD</h5>',
-
-});
-
-var customMarkerLeftDown = L.marker([51.47, -0.094], {
-    icon: myIconLeftDown,
-    title: "custom-marker-left-down"
-}).addTo(mymap);
-
-
-const flagMapping = {
-    'custom-marker-left-up': 1,
-    'custom-marker-right-up': 2,
-    'custom-marker-left-down': 3,
+const markerData = {
+    casa: {
+        icon: {
+            className: 'custom-marker-right-up casa',
+            html: '<h5>CASA</h5>',
+            title: "casa"
+        },
+        position: [11.5485652, 104.937389]
+    },
+    skylar: {
+        icon: {
+            className: 'custom-marker-left-up skylar',
+            html: '<h5>SKYLAR</h5>',
+            title: "skylar"
+        },
+        position: [11.5358442, 104.926587]
+    },
+    last: {
+        icon: {
+            className: 'custom-marker-left-up last',
+            html: '<h5>3RD</h5>',
+            title: '3rd'
+        },
+        position: [11.549400, 104.929057]
+    }
 };
 
+for (const markerDataKey in markerData) {
+    const marker = L.marker(markerData[markerDataKey].position, {
+        icon: L.divIcon(markerData[markerDataKey].icon)
+    }).addTo(mymap);
+    marker.on('click', onCustomMarkerClick);
+}
+// //LeftUp
+// var casaIcon = L.divIcon({
+//     className: 'custom-marker-left-up',
+//     html: '<h5>CASA</h5>',
+//     title: "casa"
+// });
+//
+// var casaMarker = L.marker([11.5485652, 104.937389], {
+//     icon: casaIcon
+// }).addTo(mymap);
+//
+//
+// //RightUp
+// var skylarIcon = L.divIcon({
+//     className: 'custom-marker-right-up',
+//     html: '<h5>SKYLAR</h5>',
+//     title: "skylar"
+// });
+//
+// var skylarMarker = L.marker([11.5358442, 104.926587], {
+//     icon: skylarIcon
+// }).addTo(mymap);
+//
+//
+// //LeftDown
+// var myIconLeftDown = L.divIcon({
+//     className: 'custom-marker-left-down',
+//     html: '<h5>3RD</h5>',
+//     title: '3rd'
+//
+// });
+//
+// var customMarkerLeftDown = L.marker([11.549400, 104.929057], {
+//     icon: myIconLeftDown,
+//     title: "custom-marker-left-down"
+// }).addTo(mymap);
+
+
 function onCustomMarkerClick(e) {
-    const number = e.target.options.title;
+    console.log(e);
+    const title = e.target.options.icon.options.title;
     const className = e.target.options.icon.options.className;
     $('#menu-list').hide();
     $('#menu').addClass('showed-map-content');
@@ -97,23 +115,19 @@ function onCustomMarkerClick(e) {
                 $('#menu-list').show();
                 $('#menu').removeClass('showed-map-content');
                 $('.map-content').hide();
-                for (var key in flagMapping) {
-                    $(`.map-content [data-number=${flagMapping[key]}]`).hide();
-                    $(`.${key}`).removeClass('active');
+                for (const markerKey in markerData) {
+                    $(`.map-content [data-flag-title=${markerData[markerKey].icon.title}]`).hide();
+                    $(`.${markerKey}`).removeClass('active');
                 }
                 $('.close-button').remove();
             }
         );
     }
     $('.map-content').show();
-    for (var key in flagMapping) {
-        $(`.map-content [data-number=${flagMapping[key]}]`).hide();
-        $(`.${key}`).removeClass('active');
+    for (const markerKey in markerData) {
+        $(`.map-content [data-flag-title=${markerData[markerKey].icon.title}]`).hide();
+        $(`.${markerKey}`).removeClass('active');
     }
-    $(`.map-content [data-number=${flagMapping[number]}]`).show();
-    $(`.${className}`).addClass('active');
+    $(`.map-content [data-flag-title=${title}]`).show();
+    $(`.${className.split(' ').join('.')}`).addClass('active');
 }
-
-customMarkerLeftUp.on('click', onCustomMarkerClick);
-customMarkerRightUp.on('click', onCustomMarkerClick);
-customMarkerLeftDown.on('click', onCustomMarkerClick);
