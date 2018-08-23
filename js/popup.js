@@ -1,3 +1,4 @@
+// array of popup id`s. for add popup just add id in array. for open popup add attribute data-title=${namePopup} to btn or etc.
 const popupMapping = ['imprint', 'privacy', 'contact', 'enquiry','recommend'];
 
 function closeModal() {
@@ -19,9 +20,16 @@ popupMapping.forEach(namePopup => {
     $(`[data-title=${namePopup}]`).click(function () {
         popup.open();
     });
+    //need to click on left and right padding close popup (1)
     $(`#${namePopup}`).click(closeModal);
 });
+//click on close button
+$('.close-button').click(closeModal);
 
+//fix to (1) don`t close popup at click on itself (2)
+$('.p-0.panel').click(function (e) {
+    return false;
+});
 
 // const imprintModal = new Custombox.modal({
 //     content: {
@@ -76,10 +84,10 @@ popupMapping.forEach(namePopup => {
 //
 // $('#contact').click(closeModal);
 //
-$('.close-button').click(closeModal);
 
-$('.p-0.panel').click(function (e) {
-    return false;
+//fix to (2) checkbox can be checked
+$('input[type=checkbox], .form-check-label').click(function (event) {
+    event.stopPropagation();
 });
 //
 // document.addEventListener('custombox:overlay:open', function () {
@@ -87,4 +95,3 @@ $('.p-0.panel').click(function (e) {
 //
 // document.addEventListener('custombox:overlay:close', function () {
 // });
-

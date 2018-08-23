@@ -1,5 +1,4 @@
-const panels = $.makeArray($('.panel:not(.image-panel, .p-0)'));
-console.log(panels);
+const panels = $.makeArray($('.panel:not(.image-panel, .p-0, .content-main .panel)'));
 panels.forEach(function (panel) {
         const number = Math.floor((Math.random() * 3));
         switch (number) {

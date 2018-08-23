@@ -1,0 +1,92 @@
+$popup-background: $meridian-primary-light;
+
+@mixin popup {
+  width: 100%;
+  position: absolute;
+  top: $brnadbar-height-lg;
+  @include page-padding;
+}
+
+@mixin input {
+  input, textarea {
+    color: black !important;
+    background: $popup-background !important;
+    border: $meridian-secondary-dark solid 1px !important;
+    border-radius: 0 !important;
+    &:focus {
+      box-shadow: none !important;
+      background: lighten($popup-background, 5%) !important;
+    }
+    a:focus {
+      box-shadow: none !important;
+    }
+  }
+  button {
+    border-radius: 0 !important;
+  }
+}
+
+@mixin checkbox {
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+  }
+  label {
+    p {
+      margin: 1rem;
+    }
+  }
+  .checkmark {
+    top: 0;
+    left: 0;
+    height: 25px;
+    min-width: 25px;
+    border: $meridian-secondary-dark solid 1px;
+  }
+  .checkmark:after {
+    content: "";
+    display: none;
+  }
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 8px;
+    height: 15px;
+    border: solid $meridian-secondary-dark;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: relative;
+  }
+}
+
+#imprint, #privacy, #contact, #enquiry, #recommend {
+  @include popup;
+}
+
+#contact, #recommend, #enquiry {
+  @include input;
+  @include checkbox;
+}
+
+#enquiry {
+  a {
+    text-align: center;
+    color: black !important;
+    background: $popup-background !important;
+    border: $meridian-secondary-dark solid 1px !important;
+    border-radius: 0 !important;
+    text-decoration: none;
+  }
+}
+
+.custombox-content .panel-body {
+  background: $popup-background;
+}
