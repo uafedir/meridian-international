@@ -103,22 +103,26 @@ footer {
   &.showed-map-content {
     width: 100%;
   }
-  a{
+  a {
     cursor: pointer;
   }
+  ul {
+    margin-bottom: 0;
+  }
+  overflow: hidden;
 }
 
 #menu-toggler {
   pointer-events: all;
   background: $meridian-primary;
   padding: 6px 12px;
-  hrml:not(.parallax) &:hover {
+  &:hover {
     cursor: pointer;
     background: darken($meridian-primary, 10%);
   }
 }
 
-#menu-list {
+#menu-list, #menu-list-main {
   @extend .shadow-sm;
   pointer-events: all;
   background: white;
@@ -126,7 +130,7 @@ footer {
   transform: translateY(0%);
   position: relative;
   z-index: -1;
-  transition: transform ease-out .15s;
+
   > li.menu-item {
     list-style: none;
     &:hover {
@@ -146,9 +150,7 @@ footer {
     }
   }
   &.menu-hidden {
-    @include media-breakpoint-down(sm) {
-      transform: translateY(-100%);
-    }
+    transform: translateY(-100%);
   }
   .menu-back-button {
     padding: 6px 12px;
@@ -210,6 +212,7 @@ section.page-section {
     }
   }
   .section-content {
+    position: relative;
     @include media-breakpoint-up(md) {
       max-width: calc(100% - 2 * #{$menu-width-short});
       margin: 0 0 0 #{$menu-width-short}
@@ -326,7 +329,6 @@ section.page-section {
   text-transform: uppercase;
 }
 
-
 .hidden {
   display: none;
 }
@@ -339,4 +341,8 @@ section.page-section {
 
 a[data-title] {
   cursor: pointer;
+}
+
+.menu-transition{
+  transition: transform ease-out .15s;
 }

@@ -21,7 +21,7 @@ const serve = done => {
 
 const paths = {
   html: {
-    src: '**/*.html'
+    src: ['**/*.html','!node_modules/']
   },
   css: {
     src: 'scss/*.scss',
@@ -34,9 +34,9 @@ const paths = {
 
 const css = () => {
   return src(paths.css.src)
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(sourcemaps.write())
+    //.pipe(sourcemaps.write())
     .pipe(dest(paths.css.dest));
 };
 
