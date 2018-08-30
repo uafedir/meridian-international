@@ -1,0 +1,32 @@
+#scroll-to-top {
+  display: flex;
+  opacity: 1;
+  flex-direction: row;
+  position: fixed;
+  right: calc(50% - 200px);
+  bottom: 150px;
+  width: 144px;
+  color: $meridian-secondary-light;
+  text-align: center;
+  transition: opacity 0.8s ease-out;
+  @include media-breakpoint-up(md) {
+    bottom: 0;
+    width: 72px;
+    right: 24px;
+    flex-direction: column;
+  }
+
+  &.hide{
+    opacity: 0;
+  }
+}
+
+#scroll-arrow {
+  width: 72px;
+  @include control
+}
+
+#scroll-sign {
+  width: 72px;
+  @include control
+}
