@@ -154,7 +154,7 @@ footer {
   }
   .menu-back-button {
     padding: 6px 12px;
-    background: #6d6e6f;
+    background-color: $meridian-secondary-dark;
     margin: 12px 0 0;
     margin-bottom: -12px;
     color: white;
@@ -288,12 +288,19 @@ section.page-section {
         top: -6px;
         left: -12px;
       }
+      .image-bottom{
+        top: 6px;
+      }
     }
     &.lighter {
       background: $meridian-primary-light;
     }
     &.darker {
       background: $meridian-primary-dark;
+    }
+    &.very-darker {
+      background: $meridian-secondary-dark;
+      color: #cbcbcb;
     }
   }
 }
@@ -325,6 +332,11 @@ section.page-section {
   }
 }
 
+.header-main {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .subheader-main {
   text-transform: uppercase;
 }
