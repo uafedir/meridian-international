@@ -1,48 +1,56 @@
 const $menuToogler = $("#menu-toggler");
 const $menuMain = $("#menu-list-main");
 const $menuList = $("#menu-list");
-$menuMain.css('top', -$menuMain.outerHeight()).show();
-$menuList.css('top', !isMobileScreen() ? -$menuMain.outerHeight() : -$menuMain.outerHeight() - $menuList.outerHeight() - 3);
-$("#menu").css("height", $menuToogler.outerHeight() + $menuList.outerHeight());
-$(window).on('resize', function () {
-    $menuList.css('top', !isMobileScreen() ? -$menuMain.outerHeight() : -$menuMain.outerHeight() - $menuList.outerHeight() - 3);
+$menuMain.css('top', -$menuMain.outerHeight()).removeClass('hidden');
+$menuList.css('top', !isMobileScreen() ? -$menuMain.outerHeight() : -$menuMain.outerHeight() - $menuList.outerHeight() - 3).removeClass('hidden');
+$("#menu").css("height", $menuToogler.outerHeight() + $menuList.outerHeight() + 3);
+
+let cachedWidth = $(window).width();
+$(window).resize(function () {
+    const newWidth = $(window).width();
+    if (newWidth !== cachedWidth) {
+        $menuList.css('top', !isMobileScreen() ? -$menuMain.outerHeight() : -$menuMain.outerHeight() - $menuList.outerHeight() - 3);
+        cachedWidth = newWidth;
+    }
 });
 
 const animateMenuDown = function () {
-    $menuMain.removeClass('hidden');
     $menuList.animate({
-        top: ($menuList.outerHeight() + 3) + 'px'
+        top: $menuList.outerHeight() + 'px'
     }, {
         duration: 350,
         complete: function () {
+            $menuMain.removeClass('hidden');
             $menuMain.animate({
                     top: '0px'
                 },
                 {
-                    duration: 150,
+                    duration: 150
                 });
             $menuList.addClass('hidden');
         }
     });
 };
+
 const animateMenuUp = function () {
-    $menuList.removeClass('hidden');
     $menuMain.animate({
         top: -$menuMain.outerHeight() + 'px'
     }, {
         duration: 150,
         complete: function () {
+            $menuList.removeClass('hidden');
             $menuList.animate({
-                    top: -$menuMain.outerHeight() + 'px'
+                    top: '0px'
                 },
                 {
-                    duration: 350,
+                    duration: 350
                 }
             );
             $menuMain.addClass('hidden');
         }
     });
-};
+}
+
 
 const animateContentUp = function () {
     $('html:not(.parallax) .section-content').animate({
@@ -98,6 +106,7 @@ $menuToogler.click(function () {
         } else {
             $('#menu-toggler').append('<i class="oi oi-x close-button"></i>');
             $('.close-button').click(onCloseMenu);
+
             $menuList.animate({
                 top: -$menuMain.outerHeight() + 'px'
             }, {

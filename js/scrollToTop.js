@@ -1,6 +1,5 @@
 $('#scroll-to-top').on('click', function (e) {
     //e.preventDefault();
-    console.log(1);
     $('html,body').animate({
         scrollTop: 0
     }, 700);
@@ -9,8 +8,6 @@ $('#scroll-to-top').on('click', function (e) {
 const scrollTriggerFromBottom = 1800;// px
 const toogleButton = function () {
     const scrollTop = $(window).scrollTop();
-    console.log(scrollTop);
-    console.log($(document).height() - scrollTriggerFromBottom);
     if (scrollTop > $(document).height() - scrollTriggerFromBottom) {
         $('#scroll-to-top').removeClass('hide');
     } else {

@@ -130,7 +130,7 @@ footer {
   transform: translateY(0%);
   position: relative;
   z-index: -1;
-
+  transition: transform ease-out .15s;
   > li.menu-item {
     list-style: none;
     &:hover {
@@ -150,7 +150,7 @@ footer {
     }
   }
   &.menu-hidden {
-    transform: translateY(-100%);
+    transform: translateY(-102%);
   }
   .menu-back-button {
     padding: 6px 12px;
@@ -355,6 +355,6 @@ a[data-title] {
   cursor: pointer;
 }
 
-.menu-transition{
-  transition: transform ease-out .15s;
-}
+//.menu-transition{
+//  transition: transform ease-out .15s;
+//}

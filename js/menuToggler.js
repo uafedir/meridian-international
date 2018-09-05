@@ -1,6 +1,22 @@
-$(window).on('load resize', function () {
-    $('html:not(.parallax) #menu-list').addClass('menu-hidden');
-    $('.parallax #menu-list').removeClass('menu-hidden');
+// $(window).ready(function () {
+//     if (isMobileScreen()) {
+//         $('#menu-list').addClass('menu-hidden');
+//     } else {
+//         $('#menu-list').removeClass('menu-hidden');
+//     }
+// });
+
+let cachedWidth = $(window).width();
+$(window).resize( function () {
+    const newWidth = $(window).width();
+    if (newWidth !== cachedWidth) {
+        if (isMobileScreen()) {
+            $('#menu-list').addClass('menu-hidden');
+        } else {
+            $('#menu-list').removeClass('menu-hidden');
+        }
+        cachedWidth = newWidth;
+    }
 });
 
 const $menuToogler = $("#menu-toggler");
@@ -25,7 +41,7 @@ const animateContentDown = function () {
 const tooglerContent = toogler(animateContentUp, animateContentDown);
 
 $menuToogler.on('click', function () {
-    $('#menu-list').addClass('menu-transition');
+    //$('#menu-list').addClass('menu-transition');
     tooglerContent();
     $('#menu-list').toggleClass('menu-hidden');
 });
