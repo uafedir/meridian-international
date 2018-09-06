@@ -331,6 +331,9 @@ section.page-section {
     }
   }
 }
+footer {
+  position: relative;
+}
 
 .header-main {
   text-transform: uppercase;
@@ -355,6 +358,10 @@ a[data-title] {
   cursor: pointer;
 }
 
+.close-button{
+  padding-left: 10px;
+  height: 20px;
+}
 //.menu-transition{
 //  transition: transform ease-out .15s;
 //}

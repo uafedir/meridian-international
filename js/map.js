@@ -53,7 +53,6 @@ for (const markerDataKey in markerData) {
 }
 
 function onCustomMarkerClick(e) {
-    console.log(e);
     const title = e.target.options.icon.options.title;
     const className = e.target.options.icon.options.className;
     $('#menu-list').hide();
@@ -81,3 +80,39 @@ function onCustomMarkerClick(e) {
     $(`.map-content [data-flag-title=${title}]`).show();
     $(`.${className.split(' ').join('.')}`).addClass('active');
 }
+
+(function () {
+
+    const $menuToogler = $("#menu-toggler");
+
+    let cachedWidth = $(window).width();
+    let cahedState = isMobileScreen();
+    $(window).resize(function () {
+        const newWidth = $(window).width();
+        const newState = isMobileScreen();
+        if (cahedState !== newState && newWidth !== cachedWidth) {
+            if (cahedState) {   // transition from mobile screen to desktop
+                $('#menu-list').removeClass('menu-hidden');
+            } else {            // transition from desktop to mobile screen
+                $('#menu-list').addClass('menu-hidden');
+            }
+            cachedWidth = newWidth;
+            cahedState = newState;
+        }
+    });
+
+    $menuToogler.on('click', function () {
+        //$('#menu-list').addClass('menu-transition');
+        $('#menu-list').toggleClass('menu-hidden');
+    });
+})();
+
+//animate open projects in menu
+(function () {
+    if (!$('#menu').hasClass('showed-map-content')) {
+        $("#menu [data-menu=project]").click(function () {
+            //open projects
+            $("#menu [data-menu].hidden").slideToggle("fast");
+        });
+    }
+})();
