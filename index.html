@@ -13,6 +13,71 @@
 </head>
 
 <body>
+	<script>
+		fonts = [
+		"Exo, sans-serif",
+		"Mukta, sans-serif",
+        "Raleway, sans-serif",
+        "Nunito, sans-serif",
+        "Dosis, sans-serif",
+        "Comfortaa, cursive",
+        "Play, sans-serif",
+        "Alegreya, serif",
+        "Rajdhani, sans-serif",
+        "Nanum Myeongjo, serif"
+        ];
+		let fontIndex = 1;
+		function changeFont() {
+            document.querySelector('body').style.fontFamily = fonts[fontIndex];
+            document.querySelector('.change-font').textContent = fonts[fontIndex];
+            fontIndex++;
+            if (fontIndex === fonts.length) {
+                fontIndex = 0;
+            }
+        }
+
+        function incFont() {
+            document.querySelector('body').style.fontSize = fonts[fontIndex];
+            document.querySelector('.change-font').textContent = fonts[fontIndex];
+            fontIndex++;
+            if (fontIndex === fonts.length) {
+                fontIndex = 0;
+            }
+        }
+
+        function decFont() {
+            document.querySelector('body').style.fontFamily = fonts[fontIndex];
+            document.querySelector('.change-font').textContent = fonts[fontIndex];
+            fontIndex++;
+            if (fontIndex === fonts.length) {
+                fontIndex = 0;
+            }
+        }
+	</script>
+    <div style="display: flex;
+                position:fixed;
+		        z-index: 10000;
+		        margin: 0 24px;
+		        ">
+        <button type="button" class="btn btn-primary change-font"
+                style="
+                background-color: #EAE3D9;
+		        color: #000;"
+                onclick="changeFont()">Change font</button>
+
+        <button type="button" class="btn btn-primary change-font"
+                style="
+		            background-color: #EAE3D9;
+		            color: #000;"
+                onclick="changeFont()">+</button>
+        <button type="button" class="btn btn-primary change-font"
+                style="
+		            background-color: #EAE3D9;
+		            color: #000;"
+                onclick="changeFont()">-</button>
+    </div>
+
+
 	<header id="header" class="fixed-top">
 		<div id="brand" class="text-center text-md-right">
 			<a href="/index.html">
