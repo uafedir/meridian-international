@@ -76,12 +76,14 @@ footer {
 }
 
 #header {
+  pointer-events: none;
   @include media-breakpoint-down(sm) {
     position: absolute;
   }
 }
 
 #brand {
+  pointer-events: auto ;
   background-color: $meridian-secondary-dark;
   width: 100%;
   height: $brnadbar-height-st;
