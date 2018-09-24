@@ -38,8 +38,8 @@ const markerData = {
     last: {
         icon: {
             className: 'custom-marker-left-up last',
-            html: '<h5>3RD</h5>',
-            title: '3rd'
+            html: '<h5>Flatiron</h5>',
+            title: 'Flatiron'
         },
         position: [11.549400, 104.929057]
     }
@@ -112,7 +112,7 @@ function onCustomMarkerClick(e) {
     if (!$('#menu').hasClass('showed-map-content')) {
         $("#menu [data-menu=project]").click(function () {
             //open projects
-            $("#menu [data-menu].hidden").slideToggle("fast");
+            $("#menu [data-menu=map],#menu [data-menu=casa],#menu [data-menu=skylar],#menu [data-menu=Flatiron]").slideToggle("fast");
         });
     }
 })();
