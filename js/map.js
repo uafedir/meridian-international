@@ -1,17 +1,37 @@
+// var mymap = L.map('mapid').setView([11.544239, 104.9262265], 14);
+
+// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+//     maxZoom: 16,
+//     minZoom: 12,
+//     id: 'mapbox.run-bike-hike',
+//     accessToken: 'pk.eyJ1IjoicG9wY29ybnVhIiwiYSI6ImNqa3V3anhnMTA5c2Izc3EyaDNkeXpndm0ifQ.M-7kYgptBYJGRxKo1tA22w',
+//     maxBoundsViscosity: 0.9,
+//     bounceAtZoomLimits: false,
+//     zoomControl: true,
+//     tms: false,
+//     noWrap: true,
+//     opacity: 1.0,
+// }).addTo(mymap);
+
+L.mapbox.accessToken = 'pk.eyJ1IjoicG9wY29ybnVhIiwiYSI6ImNqa3V3anhnMTA5c2Izc3EyaDNkeXpndm0ifQ.M-7kYgptBYJGRxKo1tA22w';
 var mymap = L.map('mapid').setView([11.544239, 104.9262265], 14);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    maxZoom: 16,
-    minZoom: 12,
-    id: 'mapbox.run-bike-hike',
-    accessToken: 'pk.eyJ1IjoicG9wY29ybnVhIiwiYSI6ImNqa3V3anhnMTA5c2Izc3EyaDNkeXpndm0ifQ.M-7kYgptBYJGRxKo1tA22w',
-    maxBoundsViscosity: 0.9,
-    bounceAtZoomLimits: false,
-    zoomControl: true,
-    tms: false,
-    noWrap: true,
-    opacity: 1.0,
-}).addTo(mymap);
+// Add tiles from the Mapbox Static API tiles endpoint
+// (https://www.mapbox.com/api-documentation/#retrieve-raster-tiles-from-styles)
+// Tiles are 512x512 pixels and are offset by 1 zoom level
+L.tileLayer(
+    'https://api.mapbox.com/styles/v1/popcornua/cjmg3cetl44of2rpv8j8v4ox4/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+        tileSize: 512,
+        zoomOffset: -1,
+        maxZoom: 16,
+        minZoom: 12,
+        maxBoundsViscosity: 0.9,
+        bounceAtZoomLimits: false,
+        zoomControl: true,
+        tms: false,
+        noWrap: true,
+        opacity: 1.0,
+    }).addTo(mymap);
 
 mymap.setMaxBounds([
     [11.475132, 104.8365973],
