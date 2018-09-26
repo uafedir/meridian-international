@@ -169,3 +169,20 @@
         $("#menu [data-menu].hidden").slideToggle("fast");
     });
 })();
+
+//set dark palette
+(function () {
+  const panels = $.makeArray($('.panel:not(.image-panel, .p-0, .content-main .panel)'));
+  panels.forEach(function (panel) {
+      const number = Math.floor((Math.random() * 2));
+      switch (number) {
+        case 0:
+          panel.classList.add("very-darker");
+          break;
+        case 1:
+          panel.classList.add("gray");
+          break;
+      }
+    }
+  );
+})();

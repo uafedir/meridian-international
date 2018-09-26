@@ -7988,8 +7988,8 @@ section.page-section {
     @media (min-width: 768px) {
       section.page-section:first-of-type .content-main {
         padding-top: initial; } }
-  section.page-section:first-of-type .panel {
-    background: linear-gradient(rgba(244, 243, 242, 0.3) 0%, white 75%); }
+    section.page-section:first-of-type .content-main .panel {
+      background: linear-gradient(rgba(244, 243, 242, 0.25) 0%, white 74%); }
   section.page-section:last-child {
     margin-bottom: 0; }
   section.page-section .panel-row {
@@ -8004,7 +8004,6 @@ section.page-section {
     max-width: 410px; }
   section.page-section .panel {
     padding: 6px 12px;
-    transition-duration: 1s;
     background: rgba(244, 243, 242, 0.95);
     min-height: 370px;
     margin-bottom: 10px;
@@ -8034,6 +8033,9 @@ section.page-section {
     section.page-section .panel.very-darker {
       background: #404041;
       color: #cbcbcb; }
+    section.page-section .panel.gray {
+      background: #798792;
+      color: #ffffff; }
 
 .to-project-link {
   margin-bottom: 10px;
