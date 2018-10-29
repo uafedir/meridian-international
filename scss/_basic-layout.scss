@@ -25,6 +25,17 @@ $meridian-secondary-dark: theme-color("meridian-secondary-dark");
   }
 }
 
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @for $i from 0 to 6 {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      .h#{$infix}-#{$i+1} {
+        font-size: #{3-($i + 1)/3}em;
+      }
+    }
+  }
+}
+
 $transition-default: all ease-in-out .15s;
 $brnadbar-height-st: 66px;
 $brnadbar-height-lg: 88px;
