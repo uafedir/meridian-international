@@ -12424,6 +12424,10 @@ a[data-title] {
   height: 20px;
 }
 
+#ascrail2000, #ascrail2000-hr {
+  display: none !important;
+}
+
 #pagination {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
