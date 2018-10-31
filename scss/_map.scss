@@ -1,5 +1,58 @@
+@mixin slider-control {
+    flex-direction: column;
+    position: absolute;
+    //top: calc(50vh - 72px - 10px);
+    right: 20px;
+    bottom: 130px;
+    width: 60px;
+    color: $meridian-secondary-light;
+    text-align: center;
+    @extend .shadow-sm;
+    display: none;
+    @include media-breakpoint-up(md) {
+        display: flex;
+    }
+}
+
+@mixin slider-item {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: $meridian-primary;
+    cursor: pointer;
+    transition: $transition-default;
+    &:hover {
+        background: darken($meridian-primary, 10%);
+    }
+}
+
+.slider-control{
+    @include slider-control();
+}
+
+.arrow-up, .arrow-down{
+    @include slider-item();
+}
+
+.slider-caption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $meridian-primary;
+    height: 25px;
+    padding-bottom: 5px;
+}
+
+.arrow-up, .slider-caption{
+    border-bottom: 1px solid #ddd;
+    border-bottom-color: rgba(0,0,0,.1);
+}
+
 #map-container{
    background: $meridian-primary;
+   position: relative;
 }
 #mapid{
     height: 100vh;
@@ -42,6 +95,13 @@
     float: right;
     cursor: pointer;
 }
+.slide img{
+    object-fit: cover;
+    height: 300px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
 .custom-marker-left-up,.custom-marker-right-up,.custom-marker-left-down,.custom-marker-right-down{
     background: transparent url('/media/bwc-sprite-marker-2.png') no-repeat 0 0;
     width: 160px !important;

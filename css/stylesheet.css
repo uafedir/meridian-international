@@ -9171,7 +9171,7 @@ button.bg-meridian-secondary-dark:focus {
   white-space: normal;
 }
 
-.shadow-sm, #brand, #menu-list, #menu-list-main, section.page-section .panel, #pagination, #mapid .leaflet-control-zoom {
+.shadow-sm, #brand, #menu-list, #menu-list-main, section.page-section .panel, #pagination, .slider-control, #mapid .leaflet-control-zoom {
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
           box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
@@ -13431,8 +13431,73 @@ a[data-title] {
   content: '\e0de';
 }
 
+.slider-control {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  right: 20px;
+  bottom: 130px;
+  width: 60px;
+  color: #6D6E70;
+  text-align: center;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .slider-control {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.arrow-up, .arrow-down {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #f4f3f2;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
+}
+
+.arrow-up:hover, .arrow-down:hover {
+  background: #dddad6;
+}
+
+.slider-caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f4f3f2;
+  height: 25px;
+  padding-bottom: 5px;
+}
+
+.arrow-up, .slider-caption {
+  border-bottom: 1px solid #ddd;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
 #map-container {
   background: #f4f3f2;
+  position: relative;
 }
 
 #mapid {
@@ -13492,6 +13557,14 @@ a[data-title] {
 .close-button {
   float: right;
   cursor: pointer;
+}
+
+.slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
+  max-width: 100%;
+  min-width: 100%;
 }
 
 .custom-marker-left-up, .custom-marker-right-up, .custom-marker-left-down, .custom-marker-right-down {
