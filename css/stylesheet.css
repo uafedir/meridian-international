@@ -13438,7 +13438,7 @@ a[data-title] {
           flex-direction: column;
   position: absolute;
   right: 20px;
-  bottom: 130px;
+  bottom: 170px;
   width: 60px;
   color: #6D6E70;
   text-align: center;
@@ -13486,8 +13486,7 @@ a[data-title] {
       -ms-flex-align: center;
           align-items: center;
   background: #f4f3f2;
-  height: 25px;
-  padding-bottom: 5px;
+  height: 30px;
 }
 
 .arrow-up, .slider-caption {
@@ -13565,6 +13564,18 @@ a[data-title] {
   height: 300px;
   max-width: 100%;
   min-width: 100%;
+}
+
+.slide {
+  display: none;
+}
+
+.slideshow {
+  height: 300px;
+}
+
+.counter {
+  font-family: inherit;
 }
 
 .custom-marker-left-up, .custom-marker-right-up, .custom-marker-left-down, .custom-marker-right-down {
@@ -14093,20 +14104,35 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #f4f3f2;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
   opacity: 1;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   position: fixed;
-  right: calc(50% - 200px);
   bottom: 50px;
   right: 15px;
   width: 144px;
   color: #6D6E70;
   text-align: center;
-  -webkit-transition: opacity 0.8s ease-out;
-  transition: opacity 0.8s ease-out;
+  padding: 6px 0;
+  height: initial;
+}
+
+#scroll-to-top:hover {
+  background: #dddad6;
 }
 
 @media (min-width: 768px) {
@@ -14123,51 +14149,10 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
 
 #scroll-to-top.hide {
   opacity: 0;
+  pointer-events: none;
 }
 
-#scroll-arrow {
-  width: 72px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  background: #f4f3f2;
-  cursor: pointer;
-  -webkit-transition: all ease-in-out 0.15s;
-  transition: all ease-in-out 0.15s;
-}
-
-#scroll-arrow:hover {
-  background: #dddad6;
-}
-
-#scroll-sign {
-  width: 72px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  background: #f4f3f2;
-  cursor: pointer;
-  -webkit-transition: all ease-in-out 0.15s;
-  transition: all ease-in-out 0.15s;
-}
-
-#scroll-sign:hover {
+#scroll-to-top:hover {
   background: #dddad6;
 }
 /*# sourceMappingURL=stylesheet.css.map */

@@ -1,9 +1,8 @@
 @mixin slider-control {
     flex-direction: column;
     position: absolute;
-    //top: calc(50vh - 72px - 10px);
     right: 20px;
-    bottom: 130px;
+    bottom: 170px;
     width: 60px;
     color: $meridian-secondary-light;
     text-align: center;
@@ -41,8 +40,8 @@
     justify-content: center;
     align-items: center;
     background: $meridian-primary;
-    height: 25px;
-    padding-bottom: 5px;
+    height: 30px;
+    
 }
 
 .arrow-up, .slider-caption{
@@ -100,6 +99,18 @@
     height: 300px;
     max-width: 100%;
     min-width: 100%;
+}
+
+.slide{
+    display: none;
+}
+
+.slideshow{
+    height: 300px;
+}
+
+.counter {
+    font-family: inherit;
 }
 
 .custom-marker-left-up,.custom-marker-right-up,.custom-marker-left-down,.custom-marker-right-down{

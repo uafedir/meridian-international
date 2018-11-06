@@ -55,11 +55,11 @@ const markerData = {
         },
         position: [11.5358442, 104.926587]
     },
-    last: {
+    flatiron: {
         icon: {
-            className: 'custom-marker-left-up last',
+            className: 'custom-marker-left-up flatiron',
             html: '<h5>Flatiron</h5>',
-            title: 'Flatiron'
+            title: 'flatiron'
         },
         position: [11.549400, 104.929057]
     }
@@ -94,10 +94,10 @@ function onCustomMarkerClick(e) {
     }
     $('.map-content').show();
     for (const markerKey in markerData) {
-        $(`.map-content [data-flag-title=${markerData[markerKey].icon.title}]`).hide();
+        $(`.map-content [data-flag-title=${markerData[markerKey].icon.title}]`).hide().find('.slideshow').removeClass('active');
         $(`.${markerKey}`).removeClass('active');
     }
-    $(`.map-content [data-flag-title=${title}]`).show();
+    $(`.map-content [data-flag-title=${title}]`).show().find('.slideshow').addClass('active');
     $(`.${className.split(' ').join('.')}`).addClass('active');
 }
 

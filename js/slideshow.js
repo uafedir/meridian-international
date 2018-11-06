@@ -1,10 +1,16 @@
 (function(){
 
-    var slideIndex = 1;
-        showSlides(slideIndex);
+    var slideIndex;
+    $('.leaflet-marker-icon').on('click', function () {
+            slideIndex = 1
+            updateCaption(slideIndex)
+            setTimeout(function(){
+                showSlides(slideIndex); 
+            }, 1)
+        })
 
     function updateCaption(sliderIndex){
-        var caption = $('.slider-caption').find('span') 
+        var caption = $('.slideshow.active').next().find('.counter')
         var newCaption = caption.text()
         newCaption = sliderIndex + newCaption.slice(newCaption.indexOf('/'))
         caption.html(newCaption);
@@ -14,19 +20,16 @@
         showSlides(slideIndex += n)
         updateCaption(slideIndex);
     }
-    $('.next').on('click', function (){
-        plusSlide(1)
-        
-    })
-    $('.prev').on('click', function (){
-        plusSlide(-1) 
-        
-    })
+
     
 
     function showSlides(n){
-        var slides = $('.slideshow').find('.slide');
-        console.log(slides)
+        $('.slider-control').off('click', '.next')
+        $('.slider-control').off('click', '.prev')
+
+        var slides = $('.slideshow.active').find('.slide');
+        console.log();
+        
         if(n > slides.length) {
             slideIndex = 1;
         }
@@ -38,5 +41,17 @@
             slides[i].style.display = "none";
         }
         slides[slideIndex - 1].style.display = "block";
+
+        $('.slider-control').on('click', '.next', function (){
+            //$('.slideshow.active')
+            plusSlide(1)
+            console.log('next');
+            
+        })
+        $('.slider-control').on('click', '.prev', function (){
+            plusSlide(-1) 
+            console.log('prev');
+            
+        })
     }
 })();
