@@ -13437,7 +13437,7 @@ a[data-title] {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  right: 20px;
+  right: 12px;
   bottom: 170px;
   width: 60px;
   color: #6D6E70;
@@ -13503,8 +13503,12 @@ a[data-title] {
   height: 100vh;
 }
 
+.map-panel {
+  padding: 0 12px;
+}
+
 .map-content {
-  padding: 6px 12px;
+  padding: 6px 0;
   background: #f4f3f2;
   margin-top: 94.8px;
   width: 400px;

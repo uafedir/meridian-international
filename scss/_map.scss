@@ -1,7 +1,7 @@
 @mixin slider-control {
     flex-direction: column;
     position: absolute;
-    right: 20px;
+    right: 12px;
     bottom: 170px;
     width: 60px;
     color: $meridian-secondary-light;
@@ -56,9 +56,12 @@
 #mapid{
     height: 100vh;
 }
+.map-panel {
+    padding: 0 12px;
+}
 
 .map-content{
-    padding: 6px 12px;
+    padding: 6px 0;
     background: $meridian-primary;
     margin-top: $brnadbar-height-st+$toggler-height*0.9;
     width: $header-width-st;
