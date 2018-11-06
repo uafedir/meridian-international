@@ -78,6 +78,7 @@ function onCustomMarkerClick(e) {
     $('#menu-list').hide();
     $('#menu').addClass('showed-map-content');
     if ($('#menu-toggler .close-button').length === 0) {
+        $('#menu-toggler').addClass('close-panel');
         $('#menu-toggler').append('<i class="oi oi-x close-button"></i>');
         $('.close-button').click(function (event) {
                 $('#menu-list').show();
@@ -91,6 +92,14 @@ function onCustomMarkerClick(e) {
                 event.stopPropagation();
             }
         );
+        $('.close-panel').click(function (event) {
+            $('#menu').removeClass('showed-map-content');
+            $('.map-content').hide();
+            $('.close-button').remove();
+            $('#menu-list').show();
+            $('#menu-list').removeClass('close-panel');
+            event.stopPropagation();
+        });
     }
     $('.map-content').show();
     for (const markerKey in markerData) {
