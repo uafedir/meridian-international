@@ -28,7 +28,6 @@
         $('.slider-control').off('click', '.prev')
 
         var slides = $('.slideshow.active').find('.slide');
-        console.log();
         
         if(n > slides.length) {
             slideIndex = 1;
@@ -43,15 +42,10 @@
         slides[slideIndex - 1].style.display = "block";
 
         $('.slider-control').on('click', '.next', function (){
-            //$('.slideshow.active')
             plusSlide(1)
-            console.log('next');
-            
         })
         $('.slider-control').on('click', '.prev', function (){
-            plusSlide(-1) 
-            console.log('prev');
-            
+            plusSlide(-1)
         })
     }
 })();
