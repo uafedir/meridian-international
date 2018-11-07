@@ -13701,6 +13701,10 @@ a[data-title] {
   cursor: default;
 }
 
+.leaflet-control-attribution {
+  display: none;
+}
+
 /*
  ----------------------------
  Core
