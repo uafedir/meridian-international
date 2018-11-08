@@ -13,6 +13,23 @@ function toogler(fun1, fun2) {
     }
 }
 
+function showPanorama(url){
+    $('#background iframe').attr('src', "../../media/panorama/"+ url)  
+    if($(window).innerWidth() < 768){
+        toggleHide()
+    }     
+}
+
+function toggleHide(){
+    $('#panorama-list').toggleClass('fade');
+        if($('#hide-btn').children('i').hasClass('down')){
+            $('#hide-btn').children('i').removeClass('down')
+        } else {
+            $('#hide-btn').children('i').addClass('down')
+        }
+    $('#hide-btn').children('h6').toggleClass('active')
+}
+
 //parallax & pagination
 (function () {
     //parallax
@@ -291,4 +308,147 @@ $(function() {
     });
 });
 
+(function(){
+    $('#hide-btn').on('click', function(){
+        toggleHide()
+    })
+})();
 
+(function (){
+    var x = [
+        {
+            url_preview: "84256_01_v1.jpg",
+            url_panorama: "84256_01_v1",
+            label: "label1"
+        },
+        {
+            url_preview: "84256_02_v1.jpg",
+            url_panorama: "84256_02_v1",
+            label: "label2"
+        },
+        {
+            url_preview : "84257_01_v1.jpg",
+            url_panorama: "84257_01_v1",
+            label: "label3"
+        },
+        {
+            url_preview: "84257_02_v1.jpg",
+            url_panorama: "84257_02_v1",
+            label: "label4"
+        },
+        {
+            url_preview: "84257_03_v1.jpg",
+            url_panorama: "84257_03_v1",
+            label: "label5"
+        },
+        {
+            url_preview: "84257_04_v1.jpg",
+            url_panorama: "84257_04_v1",
+            label: "label6"
+        },
+        {
+            url_preview: "84257_06_v1.jpg",
+            url_panorama: "84257_06_v1",
+            label: "label7"
+        },
+        {
+            url_preview : "82919_01_v1.jpg",
+            url_panorama: "82919_01_v1",
+            label: "label8"
+        },
+        {
+            url_preview: "83778_panorama.jpg",
+            url_panorama: "83778_panorama",
+            label: "label9"
+        },
+        {
+            url_preview: "83779_01_V1.jpg",
+            url_panorama: "83779_01_V1",
+            label: "label10"
+        },
+        {
+            url_preview: "83779_02_V1.jpg",
+            url_panorama: "83779_02_V1",
+            label: "label11"
+        },
+        {
+            url_preview: "83781_01_v1.jpg",
+            url_panorama: "83781_01_v1",
+            label: "label12"
+        },
+        {
+            url_preview : "83781_01_v2.jpg",
+            url_panorama: "83781_01_v2",
+            label: "label13"
+        },
+        {
+            url_preview: "83781_01_v4.jpg",
+            url_panorama: "83781_01_v4",
+            label: "label14"
+        },
+        {
+            url_preview: "83782_01_v2.jpg",
+            url_panorama: "83782_01_v2",
+            label: "label15"
+        },
+        {
+            url_preview: "83782_02_v1.jpg",
+            url_panorama: "83782_02_v1",
+            label: "label16"
+        },
+        {
+            url_preview: "83782_03_v2.jpg",
+            url_panorama: "83782_03_v2",
+            label: "label17"
+        },
+        {
+            url_preview : "83782_04_v2.jpg",
+            url_panorama: "83782_04_v2",
+            label: "label18"
+        },
+        {
+            url_preview: "83782_05_v1.jpg",
+            url_panorama: "83782_05_v1",
+            label: "label19"
+        },
+        {
+            url_preview: "83782_06_v2.jpg",
+            url_panorama: "83782_06_v2",
+            label: "label20"
+        },
+        {
+            url_preview: "84141_01_v1.jpg",
+            url_panorama: "84141_01_v1",
+            label: "label21"
+        },
+        {
+            url_preview: "84143_01_v1.jpg",
+            url_panorama: "84143_01_v1",
+            label: "label22"
+        },
+        {
+            url_preview : "84144_01_v1.jpg",
+            url_panorama: "84144_01_v1",
+            label: "label23"
+        },
+        {
+            url_preview: "84145_01_v1.jpg",
+            url_panorama: "84145_01_v1",
+            label: "label24"
+        },
+        {
+            url_preview: "84145_02_v2.jpg",
+            url_panorama: "84145_02_v2",
+            label: "label25"
+        }
+    ]
+    
+    for( item in x ){
+        $('#panorama-list').append('<div class="panel" onclick="showPanorama('+"'"+x[item].url_panorama+"'"+')">'+
+            '<div class="panel-body">'+
+                '<img src="/media/preview/'+ x[item].url_preview +'" alt="" >'+
+                '<h6>'+ x[item].label +'</h6>'+
+            '</div>'+
+        '</div>')
+    }
+})();

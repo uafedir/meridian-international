@@ -142,14 +142,12 @@
             tooglerMenu.reset();
             clicked = false;
             if (cahedState) {   // transition from mobile screen to desktop
-                console.log(1);
                 $menuMain.css('top', -$menuMain.outerHeight()).removeClass('hidden');
                 $menuList.css('top', -$menuMain.outerHeight()).removeClass('hidden');
                 $('.close-button').remove();
                 // $('#menu-list').removeClass('menu-hidden');
                 $('.section-content, #footer').removeAttr('style');
             } else {            // transition from desktop to mobile screen
-                console.log(2);
                 $menuList.css('top',-$menuMain.outerHeight() - $menuList.outerHeight() - 3).removeClass('hidden');
                 $menuMain.css('top', -$menuMain.outerHeight()).removeClass('hidden');
 
