@@ -11996,6 +11996,12 @@ a.text-meridian-secondary-dark:hover, a.text-meridian-secondary-dark:focus {
   padding-bottom: 32px;
 }
 
+@media (max-width: 767.98px) {
+  #panorama-list {
+    padding-bottom: 45px;
+  }
+}
+
 #panorama-list.fade {
   opacity: 0;
   visibility: hidden;
@@ -12058,6 +12064,15 @@ footer {
   footer {
     width: calc(200px + ((100% - (1.7 * 200px) - 2 * 10px - 2 * 180px) / 3));
     margin: 0 180px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer-bottom-fix {
+    min-width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 30px;
   }
 }
 
@@ -12592,6 +12607,10 @@ a[data-title] {
   #hide-btn {
     top: 88px;
   }
+}
+
+.scroll-tour {
+  z-index: 1;
 }
 
 .noselect {

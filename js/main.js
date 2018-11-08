@@ -17,6 +17,7 @@ function showPanorama(url){
     $('#background iframe').attr('src', "../../media/panorama/"+ url)  
     if($(window).innerWidth() < 768){
         toggleHide()
+        hideScroll()
     }     
 }
 
@@ -28,6 +29,10 @@ function toggleHide(){
             $('#hide-btn').children('i').addClass('down')
         }
     $('#hide-btn').children('h6').toggleClass('active')
+}
+
+function hideScroll(){
+    $('.scroll-tour').toggle()
 }
 
 //parallax & pagination
@@ -311,6 +316,7 @@ $(function() {
 (function(){
     $('#hide-btn').on('click', function(){
         toggleHide()
+        hideScroll()
     })
 })();
 

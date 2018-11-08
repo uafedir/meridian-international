@@ -64,6 +64,9 @@ $header-width-hd: calc(#{$menu-width-short} + ((100% - (1.7 * #{$menu-width-shor
   opacity: 1;
   transition: $transition-default;
   padding-bottom: 32px;
+  @include media-breakpoint-down(sm){
+    padding-bottom: 45px;
+  }
 
   &.fade {
     opacity: 0;
@@ -111,6 +114,14 @@ footer {
   @include media-breakpoint-up(hd) {
     width: $header-width-hd;
     margin: 0 $page-side-offset-hd;
+  }
+}
+
+.footer-bottom-fix{
+  @include media-breakpoint-down(sm){
+    min-width: 100%;
+    position: sticky;
+    bottom: 30px;
   }
 }
 
@@ -539,7 +550,9 @@ a[data-title] {
   }
 }
 
-
+.scroll-tour{
+  z-index: 1;
+}
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
