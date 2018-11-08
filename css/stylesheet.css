@@ -9171,7 +9171,7 @@ button.bg-meridian-secondary-dark:focus {
   white-space: normal;
 }
 
-.shadow-sm, #brand, #menu-list, #menu-list-main, section.page-section .panel, #pagination, .slider-control, #mapid .leaflet-control-zoom {
+.shadow-sm, #brand, #menu-list, #menu-list-main, section.page-section .panel, #footer, #pagination, .slider-control, #mapid .leaflet-control-zoom, .leaflet-bar, .rangeslider__handle {
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
           box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
@@ -13709,7 +13709,7 @@ a[data-title] {
 
 .map-content {
   padding: 6px 0;
-  background: #f4f3f2;
+  background: white;
   margin-top: 94.8px;
   width: 400px;
   max-width: calc(100% - 20px);
@@ -13903,6 +13903,10 @@ a[data-title] {
 
 .leaflet-control-attribution {
   display: none;
+}
+
+.leaflet-bar {
+  border: none !important;
 }
 
 /*
@@ -14102,8 +14106,6 @@ a[data-title] {
   width: auto;
   height: auto;
   background-color: #ffffff;
-  -webkit-box-shadow: 0 0 4px 0 #807464;
-          box-shadow: 0 0 4px 0 #807464;
   padding: 15px 9px;
   color: #1c1918;
   line-height: 1;

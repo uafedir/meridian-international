@@ -62,7 +62,7 @@
 
 .map-content{
     padding: 6px 0;
-    background: $meridian-primary;
+    background: white;
     margin-top: $brnadbar-height-st+$toggler-height*0.9;
     width: $header-width-st;
     max-width: $header-max-width-st;
@@ -204,4 +204,9 @@
 
 .leaflet-control-attribution{
     display: none;
+}
+
+.leaflet-bar{
+    border: none !important;
+    @extend .shadow-sm;
 }
