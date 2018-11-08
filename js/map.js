@@ -58,7 +58,7 @@ const markerData = {
     flatiron: {
         icon: {
             className: 'custom-marker-left-up flatiron',
-            html: '<h5>Flatiron</h5>',
+            html: '<h5>FLATIRON</h5>',
             title: 'flatiron'
         },
         position: [11.549400, 104.929057]
