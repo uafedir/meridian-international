@@ -12613,6 +12613,13 @@ a[data-title] {
   z-index: 1;
 }
 
+#panorama-list .panel.active {
+  cursor: default;
+  background: #404041;
+  color: white;
+  pointer-events: none;
+}
+
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */

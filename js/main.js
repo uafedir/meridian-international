@@ -15,9 +15,8 @@ function toogler(fun1, fun2) {
 
 function showPanorama(url){
     // var getUrl = window.location;
-    $('#background iframe').attr('src', url);
-   console.log(url);
-   
+    $('#background iframe').attr('src', url)
+    
     
     if($(window).width() < 768){
         toggleHide()
@@ -458,11 +457,19 @@ $(function() {
     ]
     var getUrl = window.location;
     for( item in x ){
-        $('#panorama-list').append('<div class="panel" onclick="showPanorama('+"'"+ 'https://' + getUrl.host +"/media/panorama/"+x[item].url_panorama+ '/' +"'"+')">'+
+        var active = (item == 0)?'active':''
+        $('#panorama-list').append('<div class="panel ' + active + '" data-url="'+ getUrl.protocol +'//' + getUrl.host +"/media/panorama/"+x[item].url_panorama+ '/ ">' +
             '<div class="panel-body">'+
                 '<img src="/media/preview/'+ x[item].url_preview +'" alt="" >'+
                 '<h6>'+ x[item].label +'</h6>'+
             '</div>'+
         '</div>')
     }
+
+    $('#panorama-list .panel').on('click', function () {
+        showPanorama($(this).data('url'))
+        console.log($(this).data('url'))
+        $('#panorama-list .panel.active').removeClass('active')
+        $(this).addClass('active')
+    })
 })();
