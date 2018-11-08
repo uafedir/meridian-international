@@ -2,7 +2,7 @@
     width: auto;
     height: auto;
     background-color: #ffffff;
-    box-shadow: 0 0 4px 0 #807464;
+    @extend .shadow-sm;
     padding: 15px 9px;
     color: #1c1918;
     line-height: 1;
