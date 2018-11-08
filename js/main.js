@@ -14,8 +14,12 @@ function toogler(fun1, fun2) {
 }
 
 function showPanorama(url){
-    $('#background iframe').attr('src', "../../media/panorama/"+ url)  
-    if($(window).innerWidth() < 768){
+    // var getUrl = window.location;
+    $('#background iframe').attr('src', url);
+   console.log(url);
+   
+    
+    if($(window).width() < 768){
         toggleHide()
         hideScroll()
     }     
@@ -318,6 +322,10 @@ $(function() {
         toggleHide()
         hideScroll()
     })
+    if($(window).width() < 768){
+        toggleHide()
+        hideScroll()
+    } 
 })();
 
 (function (){
@@ -368,13 +376,13 @@ $(function() {
             label: "label9"
         },
         {
-            url_preview: "83779_01_V1.jpg",
-            url_panorama: "83779_01_V1",
+            url_preview: "83779_01_v1.jpg",
+            url_panorama: "83779_01_v1",
             label: "label10"
         },
         {
-            url_preview: "83779_02_V1.jpg",
-            url_panorama: "83779_02_V1",
+            url_preview: "83779_02_v1.jpg",
+            url_panorama: "83779_02_v1",
             label: "label11"
         },
         {
@@ -448,9 +456,9 @@ $(function() {
             label: "label25"
         }
     ]
-    
+    var getUrl = window.location;
     for( item in x ){
-        $('#panorama-list').append('<div class="panel" onclick="showPanorama('+"'"+x[item].url_panorama+"'"+')">'+
+        $('#panorama-list').append('<div class="panel" onclick="showPanorama('+"'"+ 'https://' + getUrl.host +"/media/panorama/"+x[item].url_panorama+ '/' +"'"+')">'+
             '<div class="panel-body">'+
                 '<img src="/media/preview/'+ x[item].url_preview +'" alt="" >'+
                 '<h6>'+ x[item].label +'</h6>'+
