@@ -6,7 +6,7 @@
   bottom: 50px;
   right: 15px;
   width: 144px;
-  color: $meridian-secondary-light;
+  color: #74675f;
   text-align: center;
   padding: 6px 0;
   height: initial;
@@ -25,7 +25,7 @@
   }
 
   &:hover {
-    background: darken($meridian-primary, 10%);
+    background: darken(#e3e1df, 10%);
   }
 }
 

@@ -92,6 +92,7 @@ body {
   overflow-y: scroll !important;
   background-color: $meridian-secondary-light;
   font-family: 'Exo', sans-serif;
+  color: #74675f;
 }
 
 #header,
@@ -303,7 +304,8 @@ section.page-section {
         padding-top: initial;
       }
       .panel{
-        background: linear-gradient(rgba($meridian-primary,0.25) 0%,white 74% );
+        // background: linear-gradient(rgba($meridian-primary,0.25) 0%,white 74% );
+        background: linear-gradient(rgba(227,225,223,0.8) 0%,white 75%);
       }
     }
 
@@ -358,18 +360,16 @@ section.page-section {
       }
     }
     &.lighter {
-      background: $meridian-primary-light;
+      background: #ebeaea;
     }
     &.darker {
-      background: $meridian-primary-dark;
+      background: #cecccc;
     }
     &.very-darker {
-      background: $meridian-secondary-dark;
-      color: #cbcbcb;
+      background: #b8b5b4;
     }
     &.gray {
-      background: rgb(121, 135, 146);
-      color: #ffffff;
+      background: #e3e1df;
     }
   }
 }

@@ -1,7 +1,7 @@
 $theme-colors: (
     "meridian-primary": #f4f3f2,
-    "meridian-secondary-light": #6D6E70,
-    "meridian-secondary-dark": #404041
+    "meridian-secondary-light": #54504d,
+    "meridian-secondary-dark": #463428
 );
 
 $grid-breakpoints: (
@@ -28,5 +28,5 @@ $grid-gutter-width: 10px;
 $font-size-base: 1rem;
 $line-height-base: 1.25;
 
-$link-color:                #994c00;
+$link-color:                #1b0000;
 $link-hover-color:          darken($link-color, 10%);

@@ -4,7 +4,8 @@
     top: calc(50vh - 72px - 10px);
     right: 24px;
     width: 72px;
-    color: $meridian-secondary-light;
+    background-color: $meridian-primary;
+    color: #74675f;
     text-align: center;
     @extend .shadow-sm;
     display: none;
@@ -19,11 +20,11 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    background: $meridian-primary;
+    background: #e3e1df;
     cursor: pointer;
     transition: $transition-default;
     &:hover {
-        background: darken($meridian-primary, 10%);
+        background: darken(#e3e1df, 10%);
     }
 }
 #pagination {
@@ -37,7 +38,6 @@
 
 #page-count {
     position: relative;
-    background: white;
     padding: 10px 0;
 }
 
