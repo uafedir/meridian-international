@@ -67,7 +67,7 @@ $popup-background: $meridian-primary-light;
   }
 }
 
-#imprint, #privacy, #contact, #enquiry, #recommend {
+#disclaimer, #privacy, #contact, #enquiry, #recommend {
   @include popup;
 }
 

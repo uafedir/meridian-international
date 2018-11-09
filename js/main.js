@@ -182,7 +182,7 @@ function hideScroll(){
 //popup
 (function () {
     // array of popup id`s. for add popup just add id in array. for open popup add attribute data-title=${namePopup} to btn or etc.
-    const popupMapping = ['imprint', 'privacy', 'contact', 'enquiry', 'recommend'];
+    const popupMapping = ['disclaimer', 'privacy', 'contact', 'enquiry', 'recommend'];
 
     function closeModal() {
         Custombox.modal.close();

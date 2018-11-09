@@ -14208,7 +14208,7 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
   box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
 }
 
-#imprint, #privacy, #contact, #enquiry, #recommend {
+#disclaimer, #privacy, #contact, #enquiry, #recommend {
   width: 100%;
   position: absolute;
   top: 88px;
@@ -14216,19 +14216,19 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
 }
 
 @media (min-width: 768px) {
-  #imprint, #privacy, #contact, #enquiry, #recommend {
+  #disclaimer, #privacy, #contact, #enquiry, #recommend {
     padding: 0 24px;
   }
 }
 
 @media (min-width: 1200px) {
-  #imprint, #privacy, #contact, #enquiry, #recommend {
+  #disclaimer, #privacy, #contact, #enquiry, #recommend {
     padding: 0 76px;
   }
 }
 
 @media (min-width: 1900px) {
-  #imprint, #privacy, #contact, #enquiry, #recommend {
+  #disclaimer, #privacy, #contact, #enquiry, #recommend {
     padding: 0 180px;
   }
 }
