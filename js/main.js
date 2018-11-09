@@ -134,7 +134,7 @@ function hideScroll(){
                 current_anchor_container.html(current_anchor)
             }
             if(i == (total_anchors - 1)){
-                if(Math.ceil($(anchors[i]).offset().top + $(anchors[i]).innerHeight()) < ($(window).scrollTop() + $(window).outerHeight() * 2 / 3)){
+                if(Math.ceil($(anchors[i]).offset().top + $(anchors[i]).outerHeight()) < ($(window).scrollTop() + $(window).outerHeight())){
                     current_anchor = i+1;
                     current_anchor_container.html(current_anchor)
                 }
