@@ -13803,14 +13803,14 @@ a[data-title] {
 }
 
 .custom-marker-left-up h4, .custom-marker-left-up h5, .custom-marker-right-up h4, .custom-marker-right-up h5, .custom-marker-left-down h4, .custom-marker-left-down h5, .custom-marker-right-down h4, .custom-marker-right-down h5 {
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   font-family: 'Exo', sans-serif;
 }
 
 .custom-marker-left-up {
   background-position: 0px -540px;
-  padding: 19px 28px 28px 28px;
+  padding: 14px 28px 28px 28px;
   margin: -86px 0 0 -141px !important;
 }
 
@@ -13820,7 +13820,7 @@ a[data-title] {
 
 .custom-marker-right-up {
   background-position: 0 -658px;
-  padding: 33px 28px 26px 30px;
+  padding: 27px 28px 26px 30px;
   margin: -100px 0 0 -18px !important;
 }
 

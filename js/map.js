@@ -13,14 +13,14 @@
 //     opacity: 1.0,
 // }).addTo(mymap);
 
-L.mapbox.accessToken = 'pk.eyJ1IjoicG9wY29ybnVhIiwiYSI6ImNqa3V3anhnMTA5c2Izc3EyaDNkeXpndm0ifQ.M-7kYgptBYJGRxKo1tA22w';
-var mymap = L.map('mapid').setView([11.544239, 104.9262265], 14);
+L.mapbox.accessToken = 'pk.eyJ1IjoiZGVudm9sIiwiYSI6ImNqb2VmdDMxazFuOWYzdm9qc2RrMmFzNGUifQ.PI8PZeCUIHPdDiL2-qW8RQ';
+var mymap = L.map('mapid').setView([11.56, 104.91], 14);
 
 // Add tiles from the Mapbox Static API tiles endpoint
 // (https://www.mapbox.com/api-documentation/#retrieve-raster-tiles-from-styles)
 // Tiles are 512x512 pixels and are offset by 1 zoom level
 L.tileLayer(
-    'https://api.mapbox.com/styles/v1/popcornua/cjmg3cetl44of2rpv8j8v4ox4/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+    'https://api.mapbox.com/styles/v1/denvol/cjoefwnl140r02spaivah9ulu/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
         tileSize: 512,
         zoomOffset: -1,
         maxZoom: 16,
@@ -37,12 +37,11 @@ mymap.setMaxBounds([
     [11.475132, 104.8365973],
     [11.622882, 105.020376]
 ]);
-
 const markerData = {
     casa: {
         icon: {
             className: 'custom-marker-right-up casa',
-            html: '<h5>CASA</h5>',
+            html: '<h5>CASA BY MERIDIAN</h5>',
             title: "casa"
         },
         position: [11.5485652, 104.937389]
@@ -50,7 +49,7 @@ const markerData = {
     skylar: {
         icon: {
             className: 'custom-marker-left-up skylar',
-            html: '<h5>SKYLAR</h5>',
+            html: '<h5>SKYLAR BY MERIDIAN</h5>',
             title: "skylar"
         },
         position: [11.5358442, 104.926587]
@@ -58,10 +57,10 @@ const markerData = {
     flatiron: {
         icon: {
             className: 'custom-marker-left-up flatiron',
-            html: '<h5>FLATIRON</h5>',
+            html: '<h5>FLATIRON BY MERIDIAN</h5>',
             title: 'flatiron'
         },
-        position: [11.549400, 104.929057]
+        position: [11.5726359, 104.9077589]
     }
 };
 
