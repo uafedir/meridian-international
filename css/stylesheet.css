@@ -13903,7 +13903,7 @@ a[data-title] {
 }
 
 .leaflet-container {
-  background-color: rgba(255, 0, 0, 0);
+  background: #9e918b url(/media/background-map.jpg) no-repeat center;
   cursor: default;
 }
 

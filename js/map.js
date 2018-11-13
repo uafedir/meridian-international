@@ -37,6 +37,9 @@ mymap.setMaxBounds([
     [11.475132, 104.8365973],
     [11.622882, 105.020376]
 ]);
+
+
+
 const markerData = {
     casa: {
         icon: {
@@ -66,10 +69,12 @@ const markerData = {
 
 for (const markerDataKey in markerData) {
     const marker = L.marker(markerData[markerDataKey].position, {
-        icon: L.divIcon(markerData[markerDataKey].icon)
+        icon: L.divIcon(markerData[markerDataKey].icon),
+        zIndexOffset: 10000
     }).addTo(mymap);
     marker.on('click', onCustomMarkerClick);
 }
+
 
 function onCustomMarkerClick(e) {
     const title = e.target.options.icon.options.title;
