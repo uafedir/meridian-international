@@ -251,7 +251,7 @@ section.page-section {
       margin-bottom: 33vh;
     }
   }
-  figure.bg-image {
+.bg-image {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -571,3 +571,70 @@ a[data-title] {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+.slider-control-gallery{
+  position: absolute;
+  flex-direction: column;
+  width: 72px;
+  top: calc(50vh - 105px);
+  z-index: 1;
+  height: 90px;
+
+  @include media-breakpoint-up(st) {
+    right: calc(24px - #{$page-side-offset-st}); 
+  }
+  @include media-breakpoint-up(md) {
+    right: calc(24px - #{$page-side-offset-md}); 
+  }
+  @include media-breakpoint-up(xl) {
+    right: calc(24px - #{$page-side-offset-xl}); 
+  }
+  @include media-breakpoint-up(hd) {
+    right: calc(24px - #{$page-side-offset-hd}); 
+  }
+
+  & .arrow-up, .arrow-down{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: $meridian-primary;
+    cursor: pointer;
+    transition: $transition-default;
+    &:hover {
+      background: darken($meridian-primary, 10%)
+    }
+  } 
+}
+
+.main-logo{
+  width: 100% !important;
+  padding-left: 25px;
+}
+
+.inner-bg {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#map-container {
+  position: relative;
+  width: 100%;
+}
+
+#map{
+  height: 370px;
+  position: relative;
+  object-fit: fill;
+  width: inherit;
+  padding: 0;
+  & .leaflet-control-container{
+    display: none;
+  }
+}
+

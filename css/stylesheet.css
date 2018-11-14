@@ -12237,7 +12237,7 @@ section.page-section {
   }
 }
 
-section.page-section figure.bg-image {
+section.page-section .bg-image {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -12251,19 +12251,19 @@ section.page-section figure.bg-image {
 }
 
 @media (min-width: 768px) {
-  section.page-section figure.bg-image {
+  section.page-section .bg-image {
     margin: 0 0 0 -24px;
   }
 }
 
 @media (min-width: 1200px) {
-  section.page-section figure.bg-image {
+  section.page-section .bg-image {
     margin: 0 -76px;
   }
 }
 
 @media (min-width: 1900px) {
-  section.page-section figure.bg-image {
+  section.page-section .bg-image {
     margin: 0 -180px;
   }
 }
@@ -12632,6 +12632,91 @@ a[data-title] {
   user-select: none;
   /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.slider-control-gallery {
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 72px;
+  top: calc(50vh - 105px);
+  z-index: 1;
+  height: 90px;
+  right: calc(24px - 10px);
+}
+
+@media (min-width: 768px) {
+  .slider-control-gallery {
+    right: calc(24px - 24px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .slider-control-gallery {
+    right: calc(24px - 76px);
+  }
+}
+
+@media (min-width: 1900px) {
+  .slider-control-gallery {
+    right: calc(24px - 180px);
+  }
+}
+
+.slider-control-gallery .arrow-up, .slider-control-gallery .arrow-down {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #f4f3f2;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
+}
+
+.slider-control-gallery .arrow-up:hover, .slider-control-gallery .arrow-down:hover {
+  background: #dddad6;
+}
+
+.main-logo {
+  width: 100% !important;
+  padding-left: 25px;
+}
+
+.inner-bg {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#map-container {
+  position: relative;
+  width: 100%;
+}
+
+#map {
+  height: 370px;
+  position: relative;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: inherit;
+  padding: 0;
+}
+
+#map .leaflet-control-container {
+  display: none;
 }
 
 #pagination {
@@ -13789,7 +13874,7 @@ a[data-title] {
 }
 
 .custom-marker-left-up, .custom-marker-right-up, .custom-marker-left-down, .custom-marker-right-down {
-  background: transparent url("/media/bwc-sprite-marker-2.png") no-repeat 0 0;
+  background: transparent url("/media/bwc-sprite-marker-4.png") no-repeat 0 0;
   width: 160px !important;
   height: 100px !important;
 }
@@ -13903,7 +13988,6 @@ a[data-title] {
 }
 
 .leaflet-container {
-  background: #9e918b url(/media/background-map.jpg) no-repeat center;
   cursor: default;
 }
 
