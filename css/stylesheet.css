@@ -12641,27 +12641,27 @@ a[data-title] {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 72px;
-  top: calc(50vh - 105px);
+  top: calc(50vh - 82px);
   z-index: 1;
   height: 90px;
-  right: calc(24px - 10px);
+  right: calc(99px - 10px);
 }
 
 @media (min-width: 768px) {
   .slider-control-gallery {
-    right: calc(24px - 24px);
+    right: calc(99px - 24px);
   }
 }
 
 @media (min-width: 1200px) {
   .slider-control-gallery {
-    right: calc(24px - 76px);
+    right: calc(99px - 76px);
   }
 }
 
 @media (min-width: 1900px) {
   .slider-control-gallery {
-    right: calc(24px - 180px);
+    right: calc(99px - 180px);
   }
 }
 
