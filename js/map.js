@@ -13,14 +13,14 @@
 //     opacity: 1.0,
 // }).addTo(mymap);
 
-L.mapbox.accessToken = 'pk.eyJ1IjoiZGVudm9sIiwiYSI6ImNqb2VmdDMxazFuOWYzdm9qc2RrMmFzNGUifQ.PI8PZeCUIHPdDiL2-qW8RQ';
-var mymap = L.map('mapid').setView([11.56, 104.91], 14);
+L.mapbox.accessToken = 'pk.eyJ1IjoibWVyaWRpYW5pbnRlcm5hdGlvbmFsIiwiYSI6ImNqb2ZwZ3pyMDA0dW4za213eHdsdWYzZmYifQ.SHgtcRk7sZemuADSZQY3Vg';
+var mymap = L.map('mapid').setView([11.56, 104.901], 14);
 
 // Add tiles from the Mapbox Static API tiles endpoint
 // (https://www.mapbox.com/api-documentation/#retrieve-raster-tiles-from-styles)
 // Tiles are 512x512 pixels and are offset by 1 zoom level
 L.tileLayer(
-    'https://api.mapbox.com/styles/v1/denvol/cjoefwnl140r02spaivah9ulu/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+    'https://api.mapbox.com/styles/v1/meridianinternational/cjog2mfuv2pyo2st95cw238xp/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
         tileSize: 512,
         zoomOffset: -1,
         maxZoom: 16,
@@ -34,7 +34,7 @@ L.tileLayer(
     }).addTo(mymap);
 
 mymap.setMaxBounds([
-    [11.475132, 104.8365973],
+    [11.475132, 104.8165973],
     [11.622882, 105.020376]
 ]);
 
