@@ -12644,12 +12644,13 @@ a[data-title] {
   top: calc(50vh - 82px);
   z-index: 1;
   height: 90px;
-  right: calc(99px - 10px);
+  display: none;
 }
 
 @media (min-width: 768px) {
   .slider-control-gallery {
     right: calc(99px - 24px);
+    display: block;
   }
 }
 
@@ -12717,6 +12718,20 @@ a[data-title] {
 
 #map .leaflet-control-container {
   display: none;
+}
+
+.underscored {
+  text-decoration: underline;
+}
+
+.big-font-4 {
+  padding-top: 2rem;
+  font-size: 4rem;
+}
+
+.big-font-2 {
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 #pagination {

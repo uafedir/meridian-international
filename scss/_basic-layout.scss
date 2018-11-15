@@ -581,10 +581,11 @@ a[data-title] {
   height: 90px;
 
   @include media-breakpoint-up(st) {
-    right: calc(99px - #{$page-side-offset-st}); 
+    display: none;
   }
   @include media-breakpoint-up(md) {
-    right: calc(99px - #{$page-side-offset-md}); 
+    right: calc(99px - #{$page-side-offset-md});
+    display: block; 
   }
   @include media-breakpoint-up(xl) {
     right: calc(99px - #{$page-side-offset-xl}); 
@@ -638,3 +639,16 @@ a[data-title] {
   }
 }
 
+.underscored {
+  text-decoration: underline;
+}
+
+.big-font-4{
+  padding-top: 2rem;
+  font-size: 4rem;
+}
+
+.big-font-2{
+  text-align: center;
+  font-size: 2.5rem;
+}
