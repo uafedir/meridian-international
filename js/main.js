@@ -182,7 +182,7 @@ function hideScroll(){
 //popup
 (function () {
     // array of popup id`s. for add popup just add id in array. for open popup add attribute data-title=${namePopup} to btn or etc.
-    const popupMapping = ['disclaimer', 'privacy', 'contact', 'enquiry', 'recommend'];
+    const popupMapping = ['disclaimer', 'privacy', 'contact', 'enquiry', 'recommendation'];
 
     function closeModal() {
         Custombox.modal.close();
@@ -200,7 +200,8 @@ function hideScroll(){
             }
         });
 
-        $(`[data-title=${namePopup}]`).click(function () {
+        $(`[data-title=${namePopup}]`).click(function (event) {
+            event.preventDefault();
             popup.open();
         });
         //need to click on left and right padding close popup (1)
