@@ -479,5 +479,9 @@ if (!(typeof window.orientation !== 'undefined')) {
     })
 })();
 
-
-
+(function(){
+    $('.panel[data-href]').on('click', function(){
+        console.log($(this));
+        window.location.href = $(this).attr('data-href')
+    })
+})();
