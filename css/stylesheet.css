@@ -12734,6 +12734,14 @@ a[data-title] {
   font-size: 2.5rem;
 }
 
+.panel[data-href] {
+  cursor: pointer;
+}
+
+.email-input {
+  width: 90%;
+}
+
 #pagination {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

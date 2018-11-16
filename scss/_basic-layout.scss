@@ -652,3 +652,11 @@ a[data-title] {
   text-align: center;
   font-size: 2.5rem;
 }
+
+.panel[data-href]{
+  cursor: pointer;
+}
+
+.email-input{
+  width: 90%;
+}
