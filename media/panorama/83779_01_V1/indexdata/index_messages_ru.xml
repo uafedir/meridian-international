@@ -2,11 +2,14 @@
 <krpano>
 
 
-  <data name="ru_project_title"><![CDATA[83779_01_V1]]></data>
+  <data name="ru_project_title"><![CDATA[New Project]]></data>
 
 
 
-  <data name="ru_pano6_title"><![CDATA[83779_01_V1]]></data>
+  <data name="ru_pano24_title"><![CDATA[17-1]]></data>
+
+
+  <data name="ru_pano26_title"><![CDATA[16]]></data>
 
 
 
@@ -45,6 +48,9 @@
   <data name="ru_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
   <data name="ru_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
   <data name="ru_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
 
 
 
