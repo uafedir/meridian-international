@@ -228,12 +228,13 @@ function hideScroll(){
             const number = Math.floor((Math.random() * 3));
             switch (number) {
                 case 0:
-                    break;
-                case 1:
                     panel.classList.add("lighter");
                     break;
-                case 2:
+                case 1:
                     panel.classList.add("darker");
+                    break;
+                case 2:
+                    panel.classList.add("gray");
                     break;
             }
         }
@@ -337,37 +338,7 @@ if (!(typeof window.orientation !== 'undefined')) {
         {
             url_preview: "84256_01_v1.jpg",
             url_panorama: "84256_01_v1",
-            label: "label1"
-        },
-        {
-            url_preview: "84256_02_v1.jpg",
-            url_panorama: "84256_02_v1",
-            label: "label2"
-        },
-        {
-            url_preview : "84257_01_v1.jpg",
-            url_panorama: "84257_01_v1",
-            label: "label3"
-        },
-        {
-            url_preview: "84257_02_v1.jpg",
-            url_panorama: "84257_02_v1",
-            label: "label4"
-        },
-        {
-            url_preview: "84257_03_v1.jpg",
-            url_panorama: "84257_03_v1",
-            label: "label5"
-        },
-        {
-            url_preview: "84257_04_v1.jpg",
-            url_panorama: "84257_04_v1",
-            label: "label6"
-        },
-        {
-            url_preview: "84257_06_v1.jpg",
-            url_panorama: "84257_06_v1",
-            label: "label7"
+            label: "Lobby"
         },
         {
             url_preview : "82919_01_v1.jpg",
@@ -382,57 +353,17 @@ if (!(typeof window.orientation !== 'undefined')) {
         {
             url_preview: "83779_01_v1.jpg",
             url_panorama: "83779_01_v1",
-            label: "label10"
-        },
-        {
-            url_preview: "83779_02_v1.jpg",
-            url_panorama: "83779_02_v1",
-            label: "label11"
-        },
-        {
-            url_preview: "83781_01_v1.jpg",
-            url_panorama: "83781_01_v1",
-            label: "label12"
-        },
-        {
-            url_preview : "83781_01_v2.jpg",
-            url_panorama: "83781_01_v2",
-            label: "label13"
+            label: "Studio"
         },
         {
             url_preview: "83781_01_v4.jpg",
-            url_panorama: "83781_01_v4",
-            label: "label14"
-        },
-        {
-            url_preview: "83782_01_v2.jpg",
-            url_panorama: "83782_01_v2",
-            label: "label15"
-        },
-        {
-            url_preview: "83782_02_v1.jpg",
-            url_panorama: "83782_02_v1",
-            label: "label16"
-        },
-        {
-            url_preview: "83782_03_v2.jpg",
-            url_panorama: "83782_03_v2",
-            label: "label17"
-        },
-        {
-            url_preview : "83782_04_v2.jpg",
-            url_panorama: "83782_04_v2",
-            label: "label18"
-        },
-        {
-            url_preview: "83782_05_v1.jpg",
-            url_panorama: "83782_05_v1",
-            label: "label19"
+            url_panorama: "83781_01_v1",
+            label: "1 Bedroom"
         },
         {
             url_preview: "83782_06_v2.jpg",
-            url_panorama: "83782_06_v2",
-            label: "label20"
+            url_panorama: "83782_01_v2",
+            label: "2 Bedroom"
         },
         {
             url_preview: "84141_01_v1.jpg",
@@ -452,12 +383,7 @@ if (!(typeof window.orientation !== 'undefined')) {
         {
             url_preview: "84145_01_v1.jpg",
             url_panorama: "84145_01_v1",
-            label: "label24"
-        },
-        {
-            url_preview: "84145_02_v2.jpg",
-            url_panorama: "84145_02_v2",
-            label: "label25"
+            label: "Unit L"
         }
     ]
     var getUrl = window.location;
