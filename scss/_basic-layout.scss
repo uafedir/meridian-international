@@ -67,7 +67,9 @@ $header-width-hd: calc(#{$menu-width-short} + ((100% - (1.7 * #{$menu-width-shor
   @include media-breakpoint-down(sm){
     padding-bottom: 45px;
   }
-
+  @include media-breakpoint-up(md){
+    margin-top: 88px;
+  }
   &.fade {
     opacity: 0;
     visibility: hidden;
@@ -306,7 +308,7 @@ section.page-section {
       }
       .panel{
         // background: linear-gradient(rgba($meridian-primary,0.25) 0%,white 74% );
-        background: linear-gradient(rgba(227,225,223,0.8) 0%,white 75%);
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -360,22 +362,47 @@ section.page-section {
         top: 6px;
       }
     }
+    // &.lighter {
+    //   background: #ebeaea;
+    // }
+    // &.darker {
+    //   background: #cecccc;
+    // }
+    // &.very-darker {
+    //   background: #b8b5b4;
+    // }
+    // &.gray {
+    //   background: #e3e1df;
+    // }
     &.lighter {
-      background: #ebeaea;
+      background: rgb(224, 222, 215);
+      color: rgb(129, 114, 64);
     }
     &.darker {
-      background: #cecccc;
-    }
-    &.very-darker {
-      background: #b8b5b4;
+      background:  #615d5a;
+      color: #b8b5b4;
     }
     &.gray {
-      background: #e3e1df;
+      background: rgb(121, 135, 146);
+      color: white;
     }
   }
 }
-
+.panel-one-col{
+  max-height: $panel-min-height;
+}
+.panel-two-col{
+  min-height: calc(#{$panel-min-height} * 2) !important;
+  max-height: calc(#{$panel-min-height} * 2) !important;
+  & .image-bottom{
+    max-height: $panel-min-height;
+  }
+ }
+.panel-wide{
+  min-height: calc(#{$panel-min-height} * 2 / 3) !important;
+}
 .to-project-link {
+  margin-top: 2rem;
   margin-bottom: $grid-gutter-width;
   display: block;
   &:before {
@@ -408,9 +435,22 @@ footer {
 }
 
 .header-main {
+  color: #fff;
   text-transform: uppercase;
   margin-top: calc(#{$line-height-base} * #{$font-size-base} + 12px);
   margin-bottom: 1rem;
+  @include media-breakpoint-up(xl){
+    font-size: 48px;
+  }
+  @include media-breakpoint-up(hd){
+    font-size: 55px;
+  }
+  
+}
+
+.panel-header {
+  font-size: 40px;
+  padding-bottom: 0.25rem;
 }
 .subheader-main {
   text-transform: uppercase;
@@ -550,6 +590,9 @@ a[data-title] {
   @include media-breakpoint-up(md){
     top: 88px;
   }
+  @include media-breakpoint-down(st){
+    margin-top: 105px;
+  }
 }
 
 .scroll-tour{
@@ -611,7 +654,9 @@ a[data-title] {
 }
 
 .main-logo{
-  width: 100% !important;
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 25px;
 }
 
