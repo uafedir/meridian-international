@@ -12546,6 +12546,7 @@ footer {
 .panel-header {
   font-size: 1.5rem;
   padding-bottom: 0.25rem;
+  font-size: 2rem;
 }
 
 @media (max-width: 991.98px) {
@@ -12554,9 +12555,9 @@ footer {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .panel-header {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 }
 

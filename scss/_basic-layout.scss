@@ -506,8 +506,11 @@ footer {
   @include media-breakpoint-down(md){
     font-size: 1.9rem;
   }
-  @include media-breakpoint-up(xl){
-    font-size: 2.3rem;
+  @include media-breakpoint-up(lg){
+    font-size: 1.8rem;
+  }
+  @include media-breakpoint-down(hd){
+    font-size: 2rem;
   }
 }
 .subheader-main {
