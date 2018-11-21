@@ -6,6 +6,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/css/stylesheet.css?v=23">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -80,10 +82,10 @@
 				<li class="menu-item item-level-2">
 					<a href="../virtual-tours/index.html">Virtual tours</a>
 				</li>
-				<li class="menu-item" data-title='enquiry'>
+				<li class="menu-item popup" data-title="enquiry">
 					<a>Enquiry</a>
 				</li>
-				<li class="menu-item" data-title='recommendation'>
+				<li class="menu-item popup" data-title="recommendation">
 					<a>Recommendation</a>
 				</li>
 				<a href="../../map/index.html" class="menu-back-button">Back</a>
@@ -98,7 +100,7 @@
 					<div class="panel-col panel-main col-lg-6 col-xl-4">
 						<div class="panel" paginationAnchor>
 							<div class="panel-body text-center">
-								<h2 class="header-main">A good location determines the value of the project. Somewhere on the fringes of a good area that, in time, can become part of that good area.</h2>
+								<h2 class="subheader-main pt-4">A GOOD LOCATION DETERMINES THE VALUE OF THE PROJECT. SOMEWHERE ON THE FRINGES OF A GOOD AREA THAT, IN TIME, CAN BECOME PART OF THAT GOOD AREA.</h2>
 							</div>
 						</div>
 					</div>
@@ -107,7 +109,7 @@
 					<div class="panel-col col-lg-6 col-xl-4 drop-lg-5 drop-xl-0 lift-xl-4 order-1 order-xl-2">
 						<div class="panel" paginationAnchor>
 							<div class="panel-body p-2">
-								<h3>Drone view:</h3>
+								<h3 class="panel-header">DRONE VIEW:</h3>
 								<p>It’s never been easier to establish your suite of view photographs through our DroneView Showcase.</p>
 							</div>
 						</div>
@@ -120,7 +122,7 @@
 					<div class="panel-col col-lg-6 offset-xl-0 col-xl-4 lift-lg-4 lift-xl-0 drop-xl-4 order-2 order-xl-3">
 						<div class="panel">
 							<div class="panel-body p-2">
-								<h3>PPCC surrounding:</h3>
+								<h3 class="panel-header">PPCC SURROUNDING:</h3>
 								<p>Phnom Penh City Center (Boeung Kak) a brand new city of business, leisure, and lifestyle in a rapid developing Cambodia. Entertainment & Shopping: Within the vicinity, available entertainment and shopping venues.</p>
 							</div>
 						</div>
@@ -134,28 +136,28 @@
 				<div class="panel-row content-main">
 				</div>
 				<div class="panel-row content-secondary lift-4 lift-lg-0">
-					<div class="panel-col-12 col-lg-6 col-xl-8 lift-lg-4">
-						<div class="panel" paginationAnchor>
+					<div class="panel-col-12 col-lg-6 col-xl-8 drop-lg-3">
+						<div class="panel panel-wide" paginationAnchor>
 							<div class="panel-body p-2">
-								<h3>Restaurants & Eateries</h3>
+								<h3 class="panel-header">RESTAURANTS & EATERIES</h3>
 								<p>Several retail podiums nearby houses most of the restaurants and cafes. Rest assure you will not leave with an empty stomach with all amazing Foods & beverages out there!</p>
 							</div>
 						</div>
 					</div>
-					<div class="panel-col-6 col-lg-6 col-xl-4 drop-lg-2">
+					<div class="panel-col-6 col-lg-6 col-xl-4 lift-lg-5">
 						<div class="panel image-panel">
 							<img src="/media/p27-img4-v1.jpg" alt="">
 						</div>
 					</div>
-					<div class="panel-col-6 col-lg-6 offset-xl-0 col-xl-4 lift-lg-4">
+					<div class="panel-col-6 col-lg-6 offset-xl-4 col-xl-4 lift-lg-3">
 						<div class="panel image-panel">
 							<img src="/media/p27-img5-v1.jpg" alt="">
 						</div>
 					</div>
-					<div class="panel-col-6 col-lg-6 col-xl-4 lift-xl-0 drop-lg-1">
+					<div class="panel-col-6 col-lg-6 col-xl-4 lift-lg-5">
 						<div class="panel">
 							<div class="panel-body p-2">
-								<h3>Banking:</h3>
+								<h3 class="panel-header">BANKING:</h3>
 								<p>The new project is close to various financial center. Around 8-10min drive along Preah Ang Duong St, you will get to see a stretch of international & local banks.</p>
 							</div>
 						</div>
@@ -174,7 +176,7 @@
 					<div class="panel-col col-lg-6 col-xl-4 lift-lg-4">
 						<div class="panel" paginationAnchor>
 							<div class="panel-body p-2">
-								<h3>Security, Education & Healthcare</h3>
+								<h3 class="panel-header">SECURITY, EDUCATION & HEALTHCARE</h3>
 								<p>this future CBD area enclave with ministries and department, universities & institution as well as hospital.</p>
 							</div>
 						</div>
@@ -197,23 +199,31 @@
 			<div class="section-content">
 				<div class="panel-row content-main">
 				</div>
-				<div class="panel-row content-secondary lift-4 lift-lg-0">
-					<div class="panel-col-12 col-lg-6 col-xl-8 lift-lg-4">
+				<div class="panel-row content-secondary lift-lg-4">
+					<div class="panel-col-12 col-lg-6 col-xl-8 ">
 						<div class="panel" paginationAnchor>
 							<div class="panel-body p-2">
-								<h3>Tourism</h3>
+								<h3 class="panel-header">TOURISM</h3>
 								<p>The Tourist Attractions around the area will entice you to extend your stay at this exquisite city. For instance, Wat Phnom Temple & Park, The Peace Palace etc.</p>
 							</div>
 						</div>
 					</div>
-					<div class="panel-col-6 col-lg-6 col-xl-4 drop-lg-2">
-						<div class="panel very-darker">
+					<div class="panel-col-12 col-lg-6 col-xl-8">
+						<div class="panel-map">
 							<div class="panel-body">
-								<h4>ENQUIRY</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis sollicitudin risus quis tristique. Donec</p>
-								<div class="panel-footer">
-									<a href="#" class="to-project-link" data-title='enquiry'>Enquiry Form</a>
+								<div id="map-container">
+									<div id="map">
+									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-col-6 col-lg-6 col-xl-4 lift-lg-5">
+						<div class="panel very-darker" data-title="enquiry">
+							<div class="panel-body">
+								<h4 class="panel-header">ENQUIRY</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis sollicitudin risus quis tristique. Donec</p>
+								<a href="#" class="to-project-link">Enquiry Form</a>
 							</div>
 						</div>
 					</div>
@@ -691,7 +701,8 @@ Sincerely,
 	
 	    
 	
-	    
+		
+	<script src="../../js/flatiron-map.js?v=1"></script>
 	<script src="../../js/main.js?v=8"></script>
  	<script src="../../js/project.js?v=2"></script>
 
