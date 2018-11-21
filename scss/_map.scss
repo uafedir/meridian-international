@@ -4,7 +4,6 @@
     right: 12px;
     bottom: 170px;
     width: 60px;
-    color: $meridian-secondary-light;
     text-align: center;
     @extend .shadow-sm;
     display: none;
@@ -117,7 +116,7 @@
 }
 
 .custom-marker-left-up,.custom-marker-right-up,.custom-marker-left-down,.custom-marker-right-down{
-    background: transparent url('/media/bwc-sprite-marker-4.png') no-repeat 0 0;
+    background: transparent url('/media/bwc-sprite-marker-3 .png') no-repeat 0 0;
     width: 160px !important;
     height: 100px !important;
     &:focus {
