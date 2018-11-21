@@ -67,14 +67,33 @@ const markerData = {
     }
 };
 
+const urlParams = new URLSearchParams(window.location.search);
+const mapMarker = urlParams.get('mapMarker')
+console.log(mapMarker);
+
 for (const markerDataKey in markerData) {
     const marker = L.marker(markerData[markerDataKey].position, {
         icon: L.divIcon(markerData[markerDataKey].icon),
         zIndexOffset: 10000
     }).addTo(mymap);
     marker.on('click', onCustomMarkerClick);
+    if(markerDataKey == mapMarker){
+        console.log(markerDataKey);
+        setTimeout(function () {
+            marker._icon.click();
+        },1)
+    }
 }
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
 function onCustomMarkerClick(e) {
     const title = e.target.options.icon.options.title;
