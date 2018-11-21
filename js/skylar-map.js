@@ -35,5 +35,8 @@ for (const markerDataKey in markerData) {
         icon: L.divIcon(markerData[markerDataKey].icon),
         zIndexOffset: 10000
     }).addTo(mymap);
+    marker.on('click', function(){
+        window.location = "/map/index.html?mapMarker=skylar";
+    })
 }
 
