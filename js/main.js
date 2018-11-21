@@ -399,7 +399,6 @@ if (!(typeof window.orientation !== 'undefined')) {
 
     $('#panorama-list .panel').on('click', function () {
         showPanorama($(this).data('url'))
-        console.log($(this).data('url'))
         $('#panorama-list .panel.active').removeClass('active')
         $(this).addClass('active')
     })
@@ -409,5 +408,18 @@ if (!(typeof window.orientation !== 'undefined')) {
     $('.panel[data-href]').on('click', function(){
         console.log($(this));
         window.location.href = $(this).attr('data-href')
+    })
+})();
+
+(function(){
+    $('.to-project-link').each(function(){
+        if(!$(this).closest('.panel-row').hasClass('content-main')){
+            $(this).closest('.panel').not('.main-content,.map-content .panel').addClass('panel-link').on('click', function(event){
+                event.preventDefault();
+                if(!($(this).data('title') && $(this).data('title').length > 0)){
+                    window.location = $(this).find("a:first").attr("href");
+                }
+            })
+        }
     })
 })();
