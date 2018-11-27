@@ -7,7 +7,7 @@
     const $menuList = $("#menu-list");
     $menuMain.css('top', -$menuMain.outerHeight()).removeClass('hidden');
     $menuList.css('top', isMobileScreen() ? -$menuMain.outerHeight() - $menuList.outerHeight() - 3 : -$menuMain.outerHeight()).removeClass('hidden');
-    $("#menu").css("height", $menuToogler.outerHeight() + $menuList.outerHeight() + 3);
+    $("#menu").css("height", $menuToogler.outerHeight() + $menuList.outerHeight() + 95);
 
 
 
