@@ -414,7 +414,7 @@ if (!(typeof window.orientation !== 'undefined')) {
 (function(){
     $('.to-project-link').each(function(){
         if(!$(this).closest('.panel-row').hasClass('content-main')){
-            $(this).closest('.panel').not('.main-content,.map-content .panel').addClass('panel-link').on('click', function(event){
+            $(this).closest('.panel').not('.main-content,.map-content .panel,.panel-multilink').addClass('panel-link').on('click', function(event){
                 event.preventDefault();
                 if(!($(this).data('title') && $(this).data('title').length > 0)){
                     window.location = $(this).find("a:first").attr("href");
