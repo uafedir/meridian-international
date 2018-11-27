@@ -168,6 +168,11 @@
     });
 })();
 
+(function() {
+    $("#menu [data-menu=brochure]").click(function () {
+        $("#menu [data-menu].hidden-brochure").slideToggle("fast");
+    });
+})();
 //set dark palette
 // (function () {
 //   const panels = $.makeArray($('.panel:not(.image-panel, .p-0, .content-main .panel)'));
