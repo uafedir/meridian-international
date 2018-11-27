@@ -69,7 +69,6 @@ const markerData = {
 
 const urlParams = new URLSearchParams(window.location.search);
 const mapMarker = urlParams.get('mapMarker')
-console.log(mapMarker);
 
 for (const markerDataKey in markerData) {
     const marker = L.marker(markerData[markerDataKey].position, {
@@ -78,7 +77,6 @@ for (const markerDataKey in markerData) {
     }).addTo(mymap);
     marker.on('click', onCustomMarkerClick);
     if(markerDataKey == mapMarker){
-        console.log(markerDataKey);
         setTimeout(function () {
             marker._icon.click();
         },1)
