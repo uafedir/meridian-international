@@ -219,6 +219,14 @@ function hideScroll(){
     $('input[type=checkbox], .form-check-label').click(function (event) {
         event.stopPropagation();
     });
+
+    $('.social-icons a').click(function (event) {
+        event.stopPropagation();
+    });
+
+    $('a.form-control').click(function(event){
+        event.stopPropagation();
+    })
 })();
 
 //randomColor
@@ -338,57 +346,71 @@ if (!(typeof window.orientation !== 'undefined')) {
         {
             url_preview: "84256_01_v1.jpg",
             url_panorama: "84256_01_v1",
-            label: "Lobby"
+            label: "OFFICE, Main Lobby"
+        },
+        {
+            url_preview: "84257_01_v1.jpg",
+            url_panorama: "84257_01_v1",
+            label: "CO-WORKING, Madison Pivot"
         },
         {
             url_preview : "82919_01_v1.jpg",
             url_panorama: "82919_01_v1",
-            label: "label8"
+            label: "OFFICE, Unit Brooklyn"
         },
         {
             url_preview: "83778_panorama.jpg",
             url_panorama: "83778_panorama",
-            label: "label9"
+            label: "APART'HOTEL, Hotel"
         },
         {
             url_preview: "83779_01_v1.jpg",
             url_panorama: "83779_01_v1",
-            label: "Studio"
+            label: "APART'HOTEL, Studio"
         },
         {
             url_preview: "83781_01_v4.jpg",
             url_panorama: "83781_01_v1",
-            label: "1 Bedroom"
+            label: "APART'HOTEL, 1 Bedroom"
         },
         {
             url_preview: "83782_06_v2.jpg",
             url_panorama: "83782_01_v2",
-            label: "2 Bedroom"
+            label: "APART'HOTEL, 2 Bedroom"
         },
         {
             url_preview: "84141_01_v1.jpg",
             url_panorama: "84141_01_v1",
-            label: "label21"
+            label: "OFFICE, Astoria"
         },
         {
             url_preview: "84143_01_v1.jpg",
             url_panorama: "84143_01_v1",
-            label: "label22"
+            label: "OFFICE, Madison"
         },
         {
             url_preview : "84144_01_v1.jpg",
             url_panorama: "84144_01_v1",
-            label: "label23"
+            label: "OFFICE, Gramercy"
         },
         {
             url_preview: "84145_01_v1.jpg",
             url_panorama: "84145_01_v1",
-            label: "Unit L"
+            label: "OFFICE, Lenox"
         }
     ]
+    x.sort(function(a, b){
+        if(a.label < b.label) {
+            return -1;
+        }
+        if(a.label > b.label) {
+            return 1;
+        }
+        return 0;
+    });
     var getUrl = window.location;
     for( item in x ){
-        var active = (item == 0)?'active':''
+        var active = (x[item].label == "OFFICE, Main Lobby")?'active':'';
         $('#panorama-list').append('<div class="panel ' + active + '" data-url="'+ getUrl.protocol +'//' + getUrl.host +"/media/panorama/"+x[item].url_panorama+ '/ ">' +
             '<div class="panel-body">'+
                 '<img src="/media/preview/'+ x[item].url_preview +'" alt="" >'+
@@ -406,7 +428,6 @@ if (!(typeof window.orientation !== 'undefined')) {
 
 (function(){
     $('.panel[data-href]').on('click', function(){
-        console.log($(this));
         window.location.href = $(this).attr('data-href')
     })
 })();
@@ -414,7 +435,7 @@ if (!(typeof window.orientation !== 'undefined')) {
 (function(){
     $('.to-project-link').each(function(){
         if(!$(this).closest('.panel-row').hasClass('content-main')){
-            $(this).closest('.panel').not('.main-content,.map-content .panel,.panel-multilink').addClass('panel-link').on('click', function(event){
+            $(this).closest('.panel').not('.main-content,.map-content .panel').addClass('panel-link').on('click', function(event){
                 event.preventDefault();
                 if(!($(this).data('title') && $(this).data('title').length > 0)){
                     window.location = $(this).find("a:first").attr("href");
@@ -423,3 +444,5 @@ if (!(typeof window.orientation !== 'undefined')) {
         }
     })
 })();
+
+
