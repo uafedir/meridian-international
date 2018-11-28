@@ -1,11 +1,14 @@
 (function(){
 
     var slideIndex;
+    
+    
     $('.leaflet-marker-icon').on('click', function () {
             slideIndex = 1
-            updateCaption(slideIndex)
             setTimeout(function(){
-                showSlides(slideIndex); 
+                showSlides(slideIndex);
+                var counter = $('.slideshow.active').find('.slide');
+                ($('.counter').html('1/'+ counter.length));
             }, 1)
         })
 
