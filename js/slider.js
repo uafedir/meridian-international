@@ -2,22 +2,6 @@ imageUrl = [
     {
         url: '/media/1.jpg',
         date: "August 18, 2018"
-    },
-    {
-        url: '/media/2.jpg',
-        date: "July 12, 2018"
-    },
-    {
-        url: '/media/3.jpg',
-        date: "May 31, 2018"
-    },
-    {
-        url: '/media/4.jpg',
-        date: "April 1, 2018"
-    },
-    {
-        url: '/media/5.jfif',
-        date: "September 1, 2017"
     }
 ];
 
