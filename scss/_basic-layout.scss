@@ -427,6 +427,10 @@ section.page-section {
 .panel-wide{
   min-height: calc(#{$panel-min-height} * 2 / 3) !important;
 }
+.back-btn{
+  min-height: 35px !important;
+  max-width: 175px;
+}
 .to-project-link {
   text-decoration: none;
   margin-top: 2rem;
@@ -815,7 +819,7 @@ a[data-title] {
   padding: 1px;
   display: inline;
   color: #00ff32 !important;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 34px;
 }
 .occupation-map{
@@ -851,12 +855,8 @@ a[data-title] {
   font-size: 1.4rem;
 }
 
-.not-active {
+.brochure {
   font-size: 0.9rem;
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  color: grey;
 }
 .social-container {
   width: 100%;
