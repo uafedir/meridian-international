@@ -428,7 +428,7 @@ if (!(typeof window.orientation !== 'undefined')) {
 
 (function(){
     $('.panel[data-href]').on('click', function(){
-        window.location.href = $(this).attr('data-href')
+        window.open($(this).attr('data-href'), '_blank')  
     })
 })();
 
@@ -445,4 +445,12 @@ if (!(typeof window.orientation !== 'undefined')) {
     })
 })();
 
+(function(){
+    $('.to-external-link').each(function(){
+        $(this).closest('.panel').addClass('panel-link').on('click', function(event){
+            event.preventDefault();
+            window.open($(this).find("a:first").attr("href"), "_blank")
+        })
+    })
+})();
 
