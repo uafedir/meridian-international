@@ -466,7 +466,19 @@ if (!(typeof window.orientation !== 'undefined')) {
     }
 
 
-    $('#enquiry-privacy, #surname, #email').change(function(e){
+    $('#surname, #email').keydown(function(e){
+        $('#send').html('Send');
+        let test_firstname = $('#enquiry').find("input[placeholder='First name*']").val();
+        let test_surname = $('#enquiry').find("input[placeholder='Surname*']").val();
+        let test_email = $('#enquiry').find("input[placeholder='Email*']").val();
+        if(validateName(test_firstname) && validateName(test_surname) && validateEmail(test_email) && $('#enquiry-privacy').prop("checked")){
+            $('#send').prop("disabled", false);
+        } else {
+            $('#send').prop("disabled", true); 
+        }
+    });
+
+    $('#enquiry-privacy').change(function(e){
         $('#send').html('Send');
         let test_firstname = $('#enquiry').find("input[placeholder='First name*']").val();
         let test_surname = $('#enquiry').find("input[placeholder='Surname*']").val();
@@ -479,7 +491,7 @@ if (!(typeof window.orientation !== 'undefined')) {
     });
 
 
-    $('#firstname').change(function(e){
+    $('#firstname').keydown(function(e){
         $('#send').html('Send');
         let test_firstname = $('#enquiry').find("input[placeholder='First name*']").val();
         let test_surname = $('#enquiry').find("input[placeholder='Surname*']").val();
@@ -547,7 +559,7 @@ if (!(typeof window.orientation !== 'undefined')) {
         let regex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         return regex.test(email);   
     }
-    $('#email-newsletter').change(function(e){
+    $('#email-newsletter').keydown(function(e){
         $('#subscribe').html('Subscribe');
         let email = $('#email-newsletter').val();
         if(validateEmail(email)){
@@ -600,7 +612,7 @@ if (!(typeof window.orientation !== 'undefined')) {
     }
 
 
-    $('#recommend-privacy, #recemail, #sendemail').change(function(e){
+    $('#recemail, #sendemail').keydown(function(e){
 
         $('#sendrec').html('Send');
         let firstname = $('#sendname').val();
@@ -613,7 +625,19 @@ if (!(typeof window.orientation !== 'undefined')) {
         }
     });
 
-    $('#sendname').change(function(e){
+    $('#recommend-privacy').change(function(e){
+        $('#sendrec').html('Send');
+        let firstname = $('#sendname').val();
+        let rec_email = $('#recemail').val();
+        let send_email = $('#sendemail').val();
+        if(validateName(firstname) && validateEmail(rec_email) && validateEmail(send_email) && $('#recommend-privacy').prop("checked")){
+            $('#sendrec').prop("disabled", false);
+        } else {
+            $('#sendrec').prop("disabled", true); 
+        }
+    });
+
+    $('#sendname').keydown(function(e){
 
         
         $('#sendrec').html('Send');
