@@ -1,7 +1,7 @@
 imageUrl = [
     {
         url: '/media/01.jpg',
-        date: "August 18, 2018"
+        date: "21 November 2018"
     }
 ];
 

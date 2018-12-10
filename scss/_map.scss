@@ -62,12 +62,12 @@
 .map-content{
     padding: 6px 0;
     background: white;
-    margin-top: $brnadbar-height-st+$toggler-height*0.9;
+    margin-top: $brnadbar-height-lg+$toggler-height*0.9;
     width: $header-width-st;
     max-width: $header-max-width-st;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
     @include media-breakpoint-down(sm) {
-        margin:$brnadbar-height-st+$toggler-height*0.9 auto;
+        margin:$brnadbar-height-lg +$toggler-height*0.9 auto;
         position: absolute;
         right: 0;
         left: 0;

@@ -189,31 +189,3 @@
 //     }
 //   );
 // })();
-
-(function(){
-    var enquiry = document.getElementById("exampleFormControlTextarea2").value;
-    var before = enquiry.slice(0, enquiry.indexOf(':')+1) + '\n';
-    var after = enquiry.slice(enquiry.indexOf('Desired'));
-    var projectName = window.location.pathname;
-    projectName = projectName.slice(projectName.indexOf('/')+1,projectName.indexOf('/',1));
-    projectLink = window.location.href;
-    projectLink = projectLink.slice(0, projectLink.indexOf(projectName) + projectName.length) + '/index.html' + '\n';
-    enquiry = before + projectName.toUpperCase() + ' by Meridian'+ '\n' + 'Link to property: ' + projectLink + after; 
-    document.getElementById("exampleFormControlTextarea2").value = enquiry;
-
-    $('#exampleFormControlTextarea2').on('mousewheel',function(event){
-        event.stopPropagation();
-    })
-})();
-
-(function(){
-    var recom = document.getElementById("exampleFormControlTextar").value;
-    var before = recom.slice(0, recom.indexOf(':')+1) + ' ';
-    var after = recom.slice(recom.indexOf('Sincerely'));
-    var projectName = window.location.pathname;
-    projectName = projectName.slice(projectName.indexOf('/')+1,projectName.indexOf('/',1));
-    projectLink = window.location.href;
-    projectLink = projectLink.slice(0, projectLink.indexOf(projectName) + projectName.length) + '/index.html' + '\n';
-    recom = before + projectLink + '\n' + after;
-    document.getElementById("exampleFormControlTextar").value = recom;
-})();

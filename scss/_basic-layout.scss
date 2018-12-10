@@ -680,8 +680,8 @@ a[data-title] {
   @include media-breakpoint-up(md){
     top: 80px;
   }
-  @include media-breakpoint-down(st){
-    margin-top: 105px;
+  @include media-breakpoint-down(sm){
+    margin-top: 112px;
   }
 }
 
@@ -877,4 +877,18 @@ a[data-title] {
 
 .panel-text-bottom {
   align-content: flex-start !important;
+}
+
+.news-list {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  padding-left: 1.4rem;
+}
+
+#status{
+  display: none;
+}
+
+#subscribe{
+  margin-right: 2.4rem;
 }

@@ -453,4 +453,225 @@ if (!(typeof window.orientation !== 'undefined')) {
         })
     })
 })();
+    
+(function(){
 
+    function validateEmail(email){
+        let regex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return regex.test(email);   
+    }
+    function validateName(name){
+        let regex = /[a-zA-Z][^#&<>\"~;$^%{}?]{0,20}$/;
+        return regex.test(name);
+    }
+
+
+    $('#enquiry-privacy, #surname, #email').change(function(e){
+        $('#send').html('Send');
+        let test_firstname = $('#enquiry').find("input[placeholder='First name*']").val();
+        let test_surname = $('#enquiry').find("input[placeholder='Surname*']").val();
+        let test_email = $('#enquiry').find("input[placeholder='Email*']").val();
+        if(validateName(test_firstname) && validateName(test_surname) && validateEmail(test_email) && $('#enquiry-privacy').prop("checked")){
+            $('#send').prop("disabled", false);
+        } else {
+            $('#send').prop("disabled", true); 
+        }
+    });
+
+
+    $('#firstname').change(function(e){
+        $('#send').html('Send');
+        let test_firstname = $('#enquiry').find("input[placeholder='First name*']").val();
+        let test_surname = $('#enquiry').find("input[placeholder='Surname*']").val();
+        let test_email = $('#enquiry').find("input[placeholder='Email*']").val();
+        if(validateName(test_firstname) && validateName(test_surname) && validateEmail(test_email) && $('#enquiry-privacy').prop("checked")){
+            $('#send').prop("disabled", false);
+        } else {
+            $('#send').prop("disabled", true); 
+        }
+
+        var enquiry = document.getElementById("exampleFormControlTextarea2").value;
+        var before = enquiry.slice(0, enquiry.indexOf('name is')+8);
+        var after = enquiry.slice(enquiry.indexOf('After'));
+        enquiry = before + test_firstname + "." + '\n' + after;
+        document.getElementById("exampleFormControlTextarea2").value = enquiry;
+    });
+
+
+
+    $('#enquiry').find('.send').on('click', function (event) {
+        event.preventDefault();
+        var firstname = $('#enquiry').find("input[placeholder='First name*']").val();
+        var surname = $('#enquiry').find("input[placeholder='Surname*']").val();
+        var email = $('#enquiry').find("input[placeholder='Email*']").val();
+        var tel = $('#enquiry').find("input[placeholder='Telephone']").val();
+        var text = $('#enquiry').find('#exampleFormControlTextarea2').val();
+        var subscribe = $('#enquiry-subscribe').prop("checked");
+        var data = {
+            firstname : firstname, 
+            surname : surname, 
+            email : email, 
+            tel : tel, 
+            text : text,
+            subscribe: subscribe
+        };
+
+        request = $.ajax({
+            url: "/enquiry.php",
+            type: "post",
+            data: data
+        });
+
+        // Callback handler that will be called on success
+        request.done(function (response, textStatus, jqXHR){
+            $('#send').html('Sent Successfuly').prop("disabled", true);
+        });
+
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            
+            
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+            
+            
+    })
+})();
+
+(function(){
+    function validateEmail(email){
+        let regex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return regex.test(email);   
+    }
+    $('#email-newsletter').change(function(e){
+        $('#subscribe').html('Subscribe');
+        let email = $('#email-newsletter').val();
+        if(validateEmail(email)){
+            $('#subscribe').prop("disabled", false)
+        } else {
+            $('#subscribe').prop("disabled", true)
+        }
+    })
+
+    $('#subscribe').on('click', function(event){
+        event.preventDefault();
+        var email = $('#email-newsletter').val();
+        var data = {
+            email : email
+        };
+
+        request = $.ajax({
+           url : "/newsletter.php",
+           type : "post",
+           data: data
+        });
+
+        request.done(function (response, textStatus, jqXHR){
+            $('#subscribe').html('Subscribed Successfuly').prop("disabled", true);
+        });
+
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            
+            
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+    });
+
+})();
+
+(function(){
+
+    function validateEmail(email){
+        let regex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return regex.test(email);   
+    }
+    function validateName(name){
+        let regex = /[a-zA-Z][^#&<>\"~;$^%{}?]{0,20}$/;
+        return regex.test(name);
+    }
+
+
+    $('#recommend-privacy, #recemail, #sendemail').change(function(e){
+
+        $('#sendrec').html('Send');
+        let firstname = $('#sendname').val();
+        let rec_email = $('#recemail').val();
+        let send_email = $('#sendemail').val();
+        if(validateName(firstname) && validateEmail(rec_email) && validateEmail(send_email) && $('#recommend-privacy').prop("checked")){
+            $('#sendrec').prop("disabled", false);
+        } else {
+            $('#sendrec').prop("disabled", true); 
+        }
+    });
+
+    $('#sendname').change(function(e){
+
+        
+        $('#sendrec').html('Send');
+        let firstname = $('#sendname').val();
+        let rec_email = $('#recemail').val();
+        let send_email = $('#sendemail').val();
+        if(validateName(firstname) && validateEmail(rec_email) && validateEmail(send_email) && $('#recommend-privacy').prop("checked")){
+            
+            
+            $('#sendrec').prop("disabled", false);
+        } else {
+            $('#sendrec').prop("disabled", true); 
+        }
+
+        var recommend = document.getElementById("exampleFormControlTextar").value;
+        var before = recommend.slice(0, recommend.indexOf('Regards,')+8);
+        recommend = before + '\n' + firstname + ".";
+        document.getElementById("exampleFormControlTextar").value = recommend;
+    });
+
+    $('#recommendation').find('.send').on('click', function (event) {
+        event.preventDefault();
+        let firstname = $('#sendname').val();
+        let rec_email = $('#recemail').val();
+        let send_email = $('#sendemail').val();
+        var text = $('#recommendation').find('#exampleFormControlTextar').val();
+        var subscribe = $('#recommend-subscribe').prop("checked");
+        
+        var data = {
+            firstname : firstname, 
+            rec_email : rec_email, 
+            send_email : send_email,
+            text: text,
+            subscribe: subscribe
+        };
+
+        request = $.ajax({
+            url: "/recommend.php",
+            type: "post",
+            data: data
+        });
+
+        // Callback handler that will be called on success
+        request.done(function (response, textStatus, jqXHR){
+            $('#sendrec').html('Sent Successfuly').prop("disabled", true);
+        });
+
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            
+            
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+            
+            
+    })
+})();
