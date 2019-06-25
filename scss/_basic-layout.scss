@@ -9,7 +9,7 @@ $meridian-secondary-light: theme-color("meridian-secondary-light");
 $meridian-secondary-dark: theme-color("meridian-secondary-dark");
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
-    @for $i from 0 to 6 {
+    @for $i from 0 to 7 {
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
       .lift#{$infix}-#{$i} {
         position: relative;
@@ -27,7 +27,7 @@ $meridian-secondary-dark: theme-color("meridian-secondary-dark");
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
-    @for $i from 0 to 6 {
+    @for $i from 0 to 7 {
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
       .h#{$infix}-#{$i+1} {
         font-size: #{3-($i + 1)/3}em;
@@ -95,6 +95,9 @@ body {
   background-color: $meridian-secondary-light;
   font-family: 'Exo', sans-serif;
   color: #404041;
+}
+.body-webcam {
+  overflow-y: hidden !important;
 }
 
 #header,
@@ -247,7 +250,6 @@ footer {
 #page {
   @include page-padding
 }
-
 section.page-section {
   position: relative;
   min-height: 100vh;
@@ -278,6 +280,44 @@ section.page-section {
       margin: 0 -#{$page-side-offset-hd};
     }
   }
+  .bg-image-web {
+    transition-property: opacity;
+    transition-duration: 1s;
+    opacity: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 -#{$page-side-offset-st};
+    @include media-breakpoint-up(md) {
+      margin: 0 0 0 -#{$page-side-offset-md};
+    }
+    @include media-breakpoint-up(xl) {
+      margin: 0 -#{$page-side-offset-xl};
+    }
+    @include media-breakpoint-up(hd) {
+      margin: 0 -#{$page-side-offset-hd};
+    }
+  }
+#bg-current{
+ z-index: 0; 
+}
+#bg-next{
+ z-index: -1; 
+}
+.bg-hidden {
+  transition-property: opacity;
+  transition-duration: 1s;
+  opacity: 0;
+}
+#bg-pos {
+  top: 0px !important;
+}
   .section-content {
     position: relative;
     @include media-breakpoint-up(md) {
@@ -490,6 +530,18 @@ footer {
     font-size: 55px;
   }
   
+}
+
+.header-main-wide {
+  @include media-breakpoint-up(xl){
+    font-size: 33px;
+  }
+  @include media-breakpoint-up(gtxl){
+    font-size: 48px;
+  }
+  @include media-breakpoint-up(hd){
+    font-size: 55px;
+  }
 }
 
 .header-main-small {
@@ -905,4 +957,99 @@ a[data-title] {
 
 #subscribe{
   margin-right: 2.4rem;
+}
+
+#hide-btn-webcam h6 {
+  display: inline-block;
+  padding-left: 5px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  transition: all 0.25s ease;
+  width: 0px;
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+
+  &.active {
+    opacity: 1;
+    width: 90px;
+    margin-left: 6px;
+  }
+}
+
+#hide-btn-webcam .oi-chevron-left {
+  transform: rotate(0deg);
+  transition: transform 0.2s linear;
+
+  &.down {
+    transform: rotate(90deg)
+  }
+}
+.btns {
+  position: absolute;
+  width: 100%;
+}
+.topOffset {
+  @include media-breakpoint-down(sm){
+    top: 113px !important;
+    right: 0px !important;
+  }
+  @include media-breakpoint-down(lg){
+    top: 80px;
+    right: 95px;
+  }
+  @include media-breakpoint-down(md){
+    top: 80px;
+    right: 5%;
+  }
+  
+}
+#hide-btn-webcam {
+  width: 10rem;
+  padding: 6px 12px;
+  background: $meridian-primary;
+  &:hover {
+    cursor: pointer;
+    background: darken($meridian-primary, 10%);
+  }
+  z-index: 2;
+  text-align: center;
+}
+
+#stop-btn {
+  width: 5rem;
+  padding: 6px 12px;
+  background: $meridian-primary;
+  &:hover {
+    cursor: pointer;
+    background: darken($meridian-primary, 10%);
+  }
+  z-index: 2;
+  text-align: center;
+}
+
+#stop-btn h6 {
+  display: inline-block;
+  padding-left: 5px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  transition: all 0.25s ease;
+  width: 0px;
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+
+  &.active {
+    opacity: 1;
+  }
+}
+.showing{
+  opacity: 1 !important;
+}
+.fade-header {
+  pointer-events: none !important;
 }

@@ -1,12 +1,12 @@
 .rangeslider__handle {
-    width: auto;
+    width: fit-content;
     height: auto;
     background-color: #ffffff;
     @extend .shadow-sm;
     padding: 15px 9px;
     color: #1c1918;
     line-height: 1;
-    cursor: pointer;
+    pointer-events: none; 
     display: inline-block;
     position: absolute;
     -webkit-transition: top 400ms ease-out;
@@ -56,6 +56,10 @@
         line-height: 18px;
         color: #262220;
         width: 1px;
+    }
+    @include media-breakpoint-down(md){
+        width: 60vw;
+        left: 20vw;
     }
 }
 
