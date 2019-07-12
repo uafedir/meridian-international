@@ -13763,6 +13763,7 @@ a[data-title] {
   padding: 6px 12px;
   background: #f4f3f2;
   z-index: 2;
+  position: fixed;
   position: -webkit-sticky;
   position: sticky;
   text-align: center;

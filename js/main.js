@@ -1,8 +1,30 @@
 'use strict';
 
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+function _typeof3(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof3 = function _typeof3(obj) { return typeof obj; }; } else { _typeof3 = function _typeof3(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof3(obj); }
 
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+function _instanceof2(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _instanceof(left, right) {
+  if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+    return right[Symbol.hasInstance](left);
+  } else {
+    return _instanceof2(left, right);
+  }
+}
+
+function _typeof2(obj) {
+  if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
+    _typeof2 = function _typeof2(obj) {
+      return _typeof3(obj);
+    };
+  } else {
+    _typeof2 = function _typeof2(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof3(obj);
+    };
+  }
+
+  return _typeof2(obj);
+}
 
 var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
   return _typeof2(obj);
@@ -5288,6 +5310,15 @@ if (!(typeof window.orientation !== 'undefined')) {
 }
 
 $(document).ready(function () {
+  var scrollY = $(this).scrollTop();
+
+  if ($('#hide-btn').css("position") == "fixed") {
+    $('#hide-btn').css("position", "absolute").css("width", "calc(100% - 10px)");
+    $(window).on('scroll', function () {
+      $('#hide-btn').css("top", scrollY + 80);
+    });
+  }
+
   $('#hide-btn').on('click', function () {
     toggleHide();
     hideScroll();

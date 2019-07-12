@@ -66,6 +66,12 @@ var imageUrl = [ {
 }, {
   url: '/media/17_jun.jpg',
   date: "17 June 2019"
+}, {
+  url: '/media/25_jun.jpg',
+  date: "25 June 2019"
+}, {
+  url: '/media/01_jul.jpg',
+  date: "01 July 2019"
 }
 ];
 
