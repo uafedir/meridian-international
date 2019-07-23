@@ -204,6 +204,9 @@ footer {
     &.item-level-3 {
       padding-left: 40px;
     }
+    &.item-level-4 {
+      padding-left: 60px;
+    }
     &.menu-item-active {
       font-weight: bold;
     }
@@ -616,6 +619,18 @@ footer {
   display: none;
 }
 
+.hidden-brochure-item-1{
+  display: none;
+}
+
+.hidden-brochure-item-2{
+  display: none;
+}
+
+.hidden-brochure-item-3{
+  display: none;
+}
+
 .no-scroll {
   position: fixed;
   overflow-y: scroll;
@@ -917,6 +932,10 @@ a[data-title] {
 
 .brochure {
   font-size: 0.9rem;
+}
+
+.brochure-lvl2 {
+  font-size: 0.7rem;
 }
 .social-container {
   width: 100%;

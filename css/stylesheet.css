@@ -13107,6 +13107,10 @@ footer {
   padding-left: 40px;
 }
 
+#menu-list > li.menu-item.item-level-4, #menu-list-main > li.menu-item.item-level-4 {
+  padding-left: 60px;
+}
+
 #menu-list > li.menu-item.menu-item-active, #menu-list-main > li.menu-item.menu-item-active {
   font-weight: bold;
 }
@@ -13628,6 +13632,18 @@ footer {
   display: none;
 }
 
+.hidden-brochure-item-1 {
+  display: none;
+}
+
+.hidden-brochure-item-2 {
+  display: none;
+}
+
+.hidden-brochure-item-3 {
+  display: none;
+}
+
 .no-scroll {
   position: fixed;
   overflow-y: scroll;
@@ -13982,6 +13998,10 @@ a[data-title] {
 
 .brochure {
   font-size: 0.9rem;
+}
+
+.brochure-lvl2 {
+  font-size: 0.7rem;
 }
 
 .social-container {

@@ -8,7 +8,7 @@
   var $menuList = $("#menu-list");
   $menuMain.css('top', -$menuMain.outerHeight()).removeClass('hidden');
   $menuList.css('top', isMobileScreen() ? -$menuMain.outerHeight() - $menuList.outerHeight() - 3 : -$menuMain.outerHeight()).removeClass('hidden');
-  $("#menu").css("height", $menuToogler.outerHeight() + $menuList.outerHeight() + 95);
+  $("#menu").css("height", $menuToogler.outerHeight() + $menuList.outerHeight() + 180);
 
   var animateMenuDown = function animateMenuDown() {
     $menuList.animate({
@@ -149,6 +149,29 @@
   });
 })(); //animate open projects in menu
 
+(function () {
+  $("#menu [data-menu=brochure-item-1]").click(function () {
+    $("#menu [data-menu].hidden-brochure-item-1").slideToggle("fast");
+    $("#menu [data-menu].hidden-brochure-item-2").slideUp("fast");
+    $("#menu [data-menu].hidden-brochure-item-3").slideUp("fast");
+  });
+})();
+
+(function () {
+  $("#menu [data-menu=brochure-item-2]").click(function () {
+    $("#menu [data-menu].hidden-brochure-item-2").slideToggle("fast");
+    $("#menu [data-menu].hidden-brochure-item-1").slideUp("fast");
+    $("#menu [data-menu].hidden-brochure-item-3").slideUp("fast");
+  });
+})();
+
+(function () {
+  $("#menu [data-menu=brochure-item-3]").click(function () {
+    $("#menu [data-menu].hidden-brochure-item-3").slideToggle("fast");
+    $("#menu [data-menu].hidden-brochure-item-2").slideUp("fast");
+    $("#menu [data-menu].hidden-brochure-item-1").slideUp("fast");
+  });
+})();
 
 (function () {
   $("#menu [data-menu=project]").click(function () {
@@ -159,6 +182,9 @@
 (function () {
   $("#menu [data-menu=brochure]").click(function () {
     $("#menu [data-menu].hidden-brochure").slideToggle("fast");
+    $("#menu [data-menu].hidden-brochure-item-1").slideUp("fast");
+    $("#menu [data-menu].hidden-brochure-item-2").slideUp("fast");
+    $("#menu [data-menu].hidden-brochure-item-3").slideUp("fast");
   });
 })(); //set dark palette
 // (function () {
