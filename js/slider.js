@@ -75,6 +75,9 @@ var imageUrl = [ {
 }, {
   url: '/media/08_jul.jpg',
   date: "08 July 2019"
+}, {
+  url: '/media/15_jul.jpg',
+  date: "15 July 2019"
 }
 ];
 
